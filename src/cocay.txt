@@ -1,0 +1,104 @@
+lifted 3 functions from /Users/albuscorleone/Documents/BKISC/Thesis/experiments/webasmir/hand_example/tiny.O0.stripped
+  sub_401126 @ 0x401126: 1 blocks, 2 statements
+  sub_401137 @ 0x401137: 2 blocks, 4 statements
+  sub_40116b @ 0x40116b: 3 blocks, 4 statements
+----------------------------------------
+  external malloc @ 0x401030
+  external __libc_start_main @ 0x500000
+  external malloc @ 0x500008
+  external UnresolvableJumpTarget @ 0x601050
+  external UnresolvableCallTarget @ 0x601058
+----------------------------------------
+found 5 externals and 0 call tables
+-------------------- sub_401126 --------------------
+[Var(fn='sub_401126', name='a0', bits=64)]
+stmt: Let(var=Var(fn='sub_401126', name='v13', bits=64), expr=StackAddr(offset=0), at=4198694)
+stmt: Return(value=Conv(a=Load(addr=BinOp(op='Add', a=VarRef(var=Var(fn='sub_401126', name='a0', bits=64)), b=Const(value=8, bits=64), bits=64, signed=False), size=4, at=4198706), from_bits=32, to_bits=64, signed=False), at=4198710)
+-------------------- sub_401137 --------------------
+[Var(fn='sub_401137', name='a0', bits=32)]
+stmt: Let(var=Var(fn='sub_401137', name='v26', bits=64), expr=Call(target='malloc', args=(Const(value=16, bits=64),), at=4198732, targets=()), at=4198732)
+stmt: Store(addr=VarRef(var=Var(fn='sub_401137', name='v26', bits=64)), data=Const(value=7, bits=64), size=8, at=4198740)
+stmt: Store(addr=BinOp(op='Add', a=VarRef(var=Var(fn='sub_401137', name='v26', bits=64)), b=Const(value=8, bits=64), bits=64, signed=False), data=VarRef(var=Var(fn='sub_401137', name='a0', bits=32)), size=4, at=4198754)
+stmt: Return(value=VarRef(var=Var(fn='sub_401137', name='v26', bits=64)), at=4198762)
+-------------------- sub_40116b --------------------
+[Var(fn='sub_40116b', name='a0', bits=32), Var(fn='sub_40116b', name='a1', bits=64)]
+stmt: Let(var=Var(fn='sub_40116b', name='v26', bits=64), expr=VarRef(var=Var(fn='sub_40116b', name='a1', bits=64)), at=4198774)
+sub_40116b.v26 , sub_40116b.a1
+stmt: CallStmt(call=Call(target='sub_401137', args=(Conv(a=VarRef(var=Var(fn='sub_40116b', name='a0', bits=32)), from_bits=32, to_bits=64, signed=False),), at=4198783, targets=()), ret=Var(fn='sub_40116b', name='v15', bits=64), at=4198783)
+stmt: CallStmt(call=Call(target='sub_401126', args=(VarRef(var=Var(fn='sub_40116b', name='v15', bits=64)),), at=4198791, targets=()), ret=None, at=4198791)
+stmt: Return(value=None, at=4198797)
+
+=== Functions ===
+#c1   sub_401126           @401126  1 params  3 open holes
+#c2   sub_401137           @401137  1 params  2 open holes
+#c3   sub_40116b           @40116b  2 params  3 open holes
+
+=== Code webs ===
+#c1:
+  sub_401126
+#c2:
+  sub_401137
+#c3:
+  sub_40116b
+
+=== Data webs ===
+#d2:
+  sub_401126.&stack0
+#d1:
+  sub_401126.a0
+  sub_401137.ret1@40114c
+  sub_401137.v26
+
+=== Value webs ===
+#w3:
+  sub_401126.&stack0
+#w1:
+  sub_401126.a0
+#w2:
+  sub_401126.v13
+#w4:
+  sub_401137.a0
+#w5:
+  sub_401137.v26
+#w7:
+  sub_40116b.a0
+#w8:
+  sub_40116b.a1
+  sub_40116b.v26
+#w9:
+  sub_40116b.v15
+
+=== Lifted views with inferred webs and holes ===
+fn#c1 sub_401126(a0#w1: ptr#d1 ?T1) -> ?T3
+{
+  let v13#w2: ptr#d2 ?T2 = &stack[0];                        @401126
+  return load[4,⊤](a0 + 8);                                  @401136
+}
+holes: ?T1 :: [>=16, 8, agg]  :> { 0: [8,8,int], 8: [4,4,⊤] }
+       ?T2 :: [?,?,⊤]
+       ?T3 :: [4,4,⊤]
+
+fn#c2 sub_401137(a0#w4: ?T3) -> ptr#d1 ?T1
+{
+ L_40114c:
+  let v26#w5: ptr#d1 ?T1 = malloc(16);                       @40114c
+  store[8](v26 + 0) = 7;                                     @401154
+  store[4](v26 + 8) = a0;                                    @401162
+  return v26;                                                @40116a
+}
+holes: ?T1 :: [>=16, 8, agg]  :> { 0: [8,8,int], 8: [4,4,⊤] }
+       ?T3 :: [4,4,⊤]
+
+fn#c3 sub_40116b(a0#w7: ?T3, a1#w8: ?T4) -> void
+{
+  let v26#w8: ?T4 = a1;                                      @401176
+  let v15#w9: ptr#d1 ?T1 = sub_401137(a0);                   @40117f
+ L_401184:
+  sub_401126(v15);                                           @401187
+ L_40118c:
+  return;                                                    @40118d
+}
+holes: ?T1 :: [>=16, 8, agg]  :> { 0: [8,8,int], 8: [4,4,⊤] }
+       ?T3 :: [4,4,⊤]
+       ?T4 :: [8,8,⊤]
+

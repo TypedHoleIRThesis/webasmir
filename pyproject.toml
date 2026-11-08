@@ -1,0 +1,35 @@
+[project]
+name = "asmwebir"
+version = "0.1.0"
+description = "AsmWebIR: LLM decompilation by forward edits over a labelled knowledge store (ELF x86-64 SysV)."
+readme = "README.md"
+requires-python = ">=3.11,<3.13"
+dependencies = [
+  "angr==9.2.147",
+  "pycparser<3",
+  "egglog>=10",
+  "z3-solver>=4.13",
+  "lief>=0.15",
+  "pyelftools>=0.31",
+  "mcp>=1.2",
+  "anthropic>=0.40",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[project.scripts]
+asmwebir = "asmwebir.cli:main"
+asmwebir-mcp = "asmwebir.mcp_server:main"
+asmwebir-eval = "asmwebir.eval.report:main"
+asmwebir-run = "asmwebir.harness.loop:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/asmwebir"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

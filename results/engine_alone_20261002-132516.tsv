@@ -1,0 +1,1318 @@
+opt	program	function	index	ref	kind	ptr_level	layout_recall	layout_precision	exact	arity_ref	arity_ours
+O0	01_basic_struct	vec3_make	0	f32	wrong				0	3	0
+O0	01_basic_struct	vec3_make	1	f32	wrong				0	3	0
+O0	01_basic_struct	vec3_make	2	f32	wrong				0	3	0
+O0	01_basic_struct	vec3_make	-1	struct Vec3f	unknown				0	3	0
+O0	01_basic_struct	vec3_add	0	struct Vec3f	unknown				0	2	0
+O0	01_basic_struct	vec3_add	1	struct Vec3f	unknown				0	2	0
+O0	01_basic_struct	vec3_add	-1	struct Vec3f	unknown				0	2	0
+O0	01_basic_struct	vec3_scale	0	struct Vec3f	unknown				0	2	0
+O0	01_basic_struct	vec3_scale	1	f32	unknown				0	2	0
+O0	01_basic_struct	vec3_scale	-1	struct Vec3f	unknown				0	2	0
+O0	01_basic_struct	vec3_dot	0	struct Vec3f	unknown				0	2	0
+O0	01_basic_struct	vec3_dot	1	struct Vec3f	unknown				0	2	0
+O0	01_basic_struct	vec3_dot	-1	f32	unknown				0	2	0
+O0	01_basic_struct	color_blend	0	struct RgbaColor	unknown				0	3	3
+O0	01_basic_struct	color_blend	1	struct RgbaColor	unknown				0	3	3
+O0	01_basic_struct	color_blend	2	u8	correct				0	3	3
+O0	01_basic_struct	color_blend	-1	struct RgbaColor	unknown				0	3	3
+O0	01_basic_struct	material_init	0	ptr struct Material	correct	correct	0.077	0.500	0	4	3
+O0	01_basic_struct	material_init	1	ptr i8	correct	correct			0	4	3
+O0	01_basic_struct	material_init	2	struct RgbaColor	unknown				0	4	3
+O0	01_basic_struct	material_init	3	f32	unknown				0	4	3
+O0	01_basic_struct	object_init	0	ptr struct SceneObject	correct	correct	0.111	0.700	0	4	3
+O0	01_basic_struct	object_init	1	u64	correct				0	4	3
+O0	01_basic_struct	object_init	2	ptr i8	correct	correct			0	4	3
+O0	01_basic_struct	object_init	3	struct Vec3f	unknown				0	4	3
+O0	01_basic_struct	object_radius	0	ptr struct SceneObject	correct	correct	0.143	0.900	0	1	1
+O0	01_basic_struct	object_radius	-1	f32	wrong				0	1	1
+O0	01_basic_struct	object_dump	0	ptr struct SceneObject	correct	correct	0.143	0.900	0	1	1
+O0	01_basic_struct	main	-1	i32	unknown				0	0	0
+O0	02_recursive_struct	fs_new	0	ptr i8	correct	correct			0	3	3
+O0	02_recursive_struct	fs_new	1	enum	correct				0	3	3
+O0	02_recursive_struct	fs_new	2	u64	correct				0	3	3
+O0	02_recursive_struct	fs_new	-1	ptr struct FsNode	correct	correct	0.220	1.000	0	3	3
+O0	02_recursive_struct	fs_attach	0	ptr struct FsNode	correct	correct	0.220	1.000	0	2	2
+O0	02_recursive_struct	fs_attach	1	ptr struct FsNode	correct	correct	0.220	1.000	0	2	2
+O0	02_recursive_struct	fs_attach	-1	ptr struct FsNode	correct	correct	0.220	1.000	0	2	2
+O0	02_recursive_struct	fs_recursive_size	0	ptr struct FsNode	correct	correct	0.220	1.000	0	1	1
+O0	02_recursive_struct	fs_recursive_size	-1	u64	correct				0	1	1
+O0	02_recursive_struct	fs_collect	0	ptr struct FsNode	correct	correct	0.220	1.000	0	3	3
+O0	02_recursive_struct	fs_collect	1	u32	correct				0	3	3
+O0	02_recursive_struct	fs_collect	2	ptr struct FsStats	correct	correct	1.000	1.000	1	3	3
+O0	02_recursive_struct	fs_find	0	ptr struct FsNode	correct	correct	0.220	1.000	0	2	2
+O0	02_recursive_struct	fs_find	1	ptr i8	correct	wrong			0	2	2
+O0	02_recursive_struct	fs_find	-1	ptr struct FsNode	correct	correct	0.220	1.000	0	2	2
+O0	02_recursive_struct	fs_path	0	ptr struct FsNode	correct	correct	0.220	1.000	0	3	3
+O0	02_recursive_struct	fs_path	1	ptr i8	correct	correct			0	3	3
+O0	02_recursive_struct	fs_path	2	u64	correct				0	3	3
+O0	02_recursive_struct	fs_path	-1	i32	correct				0	3	3
+O0	02_recursive_struct	fs_print	0	ptr struct FsNode	correct	correct	0.220	1.000	0	2	2
+O0	02_recursive_struct	fs_print	1	u32	correct				0	2	2
+O0	02_recursive_struct	fs_free	0	ptr struct FsNode	correct	correct	0.220	1.000	0	1	1
+O0	02_recursive_struct	main	-1	i32	unknown				0	0	0
+O0	03_flexible_array	crc32_lite	0	ptr u8	correct	wrong			0	2	2
+O0	03_flexible_array	crc32_lite	1	u64	correct				0	2	2
+O0	03_flexible_array	crc32_lite	-1	u32	correct				0	2	2
+O0	03_flexible_array	packet_new	0	u8	correct				0	3	3
+O0	03_flexible_array	packet_new	1	ptr u8	correct	correct			0	3	3
+O0	03_flexible_array	packet_new	2	u32	correct				0	3	3
+O0	03_flexible_array	packet_new	-1	ptr struct Packet	correct	correct	1.000	0.714	0	3	3
+O0	03_flexible_array	packet_verify	0	ptr struct Packet	correct	correct	1.000	0.714	0	1	1
+O0	03_flexible_array	packet_verify	-1	i32	unknown				0	1	1
+O0	03_flexible_array	matrix_new	0	u32	correct				0	2	2
+O0	03_flexible_array	matrix_new	1	u32	correct				0	2	2
+O0	03_flexible_array	matrix_new	-1	ptr struct Matrix	correct	correct	1.000	1.000	1	2	2
+O0	03_flexible_array	matrix_at	0	ptr struct Matrix	correct	correct	1.000	1.000	1	3	3
+O0	03_flexible_array	matrix_at	1	u32	correct				0	3	3
+O0	03_flexible_array	matrix_at	2	u32	correct				0	3	3
+O0	03_flexible_array	matrix_at	-1	ptr f64	correct	correct			0	3	3
+O0	03_flexible_array	matrix_mul	0	ptr struct Matrix	correct	correct	1.000	1.000	1	2	2
+O0	03_flexible_array	matrix_mul	1	ptr struct Matrix	correct	correct	1.000	1.000	1	2	2
+O0	03_flexible_array	matrix_mul	-1	ptr struct Matrix	correct	correct	1.000	1.000	1	2	2
+O0	03_flexible_array	intern_new	0	ptr i8	correct	wrong			0	1	1
+O0	03_flexible_array	intern_new	-1	ptr struct InternedString	correct	correct	1.000	1.000	1	1	1
+O0	03_flexible_array	pool_new	0	u32	correct				0	1	1
+O0	03_flexible_array	pool_new	-1	ptr struct StringPool	correct	correct	1.000	1.000	1	1	1
+O0	03_flexible_array	pool_add	0	ptr struct StringPool	correct	correct	1.000	1.000	1	2	2
+O0	03_flexible_array	pool_add	1	ptr i8	correct	wrong			0	2	2
+O0	03_flexible_array	pool_add	-1	ptr struct InternedString	correct	correct	1.000	1.000	1	2	2
+O0	03_flexible_array	main	-1	i32	unknown				0	0	0
+O0	04_tagged_union	msg_init	0	ptr struct Message	correct	correct	0.138	1.000	0	2	2
+O0	04_tagged_union	msg_init	1	enum	correct				0	2	2
+O0	04_tagged_union	make_ping	0	ptr struct Message	correct	correct	0.138	1.000	0	2	2
+O0	04_tagged_union	make_ping	1	u64	wrong				0	2	2
+O0	04_tagged_union	make_login	0	ptr struct Message	correct	correct	0.138	1.000	0	3	3
+O0	04_tagged_union	make_login	1	ptr i8	correct	wrong			0	3	3
+O0	04_tagged_union	make_login	2	u32	correct				0	3	3
+O0	04_tagged_union	make_move	0	ptr struct Message	correct	correct	0.138	1.000	0	5	2
+O0	04_tagged_union	make_move	1	i32	wrong				0	5	2
+O0	04_tagged_union	make_move	2	f32	wrong				0	5	2
+O0	04_tagged_union	make_move	3	f32	unknown				0	5	2
+O0	04_tagged_union	make_move	4	f32	unknown				0	5	2
+O0	04_tagged_union	make_chat	0	ptr struct Message	correct	correct	0.138	1.000	0	3	3
+O0	04_tagged_union	make_chat	1	u32	wrong				0	3	3
+O0	04_tagged_union	make_chat	2	ptr i8	correct	wrong			0	3	3
+O0	04_tagged_union	make_blob	0	ptr struct Message	correct	correct	0.138	1.000	0	3	3
+O0	04_tagged_union	make_blob	1	u32	wrong				0	3	3
+O0	04_tagged_union	make_blob	2	u32	wrong				0	3	3
+O0	04_tagged_union	make_error	0	ptr struct Message	correct	correct	0.138	1.000	0	3	3
+O0	04_tagged_union	make_error	1	i32	wrong				0	3	3
+O0	04_tagged_union	make_error	2	ptr i8	correct	wrong			0	3	3
+O0	04_tagged_union	msg_checksum	0	ptr struct Message	correct	correct	0.115	1.000	0	1	1
+O0	04_tagged_union	msg_checksum	-1	u32	correct				0	1	1
+O0	04_tagged_union	msg_print	0	ptr struct Message	correct	correct	0.115	1.000	0	1	1
+O0	04_tagged_union	main	-1	i32	unknown				0	0	0
+O0	05_anon_union	reg_show	0	ptr i8	correct	wrong			0	2	2
+O0	05_anon_union	reg_show	1	union Reg32	unknown				0	2	2
+O0	05_anon_union	cpu_reset	0	ptr struct CpuState	correct	correct	0.042	0.750	0	2	2
+O0	05_anon_union	cpu_reset	1	ptr i8	correct	wrong			0	2	2
+O0	05_anon_union	cpu_add	0	ptr struct CpuState	correct	correct	0.042	0.750	0	3	3
+O0	05_anon_union	cpu_add	1	u32	correct				0	3	3
+O0	05_anon_union	cpu_add	2	u32	correct				0	3	3
+O0	05_anon_union	cpu_swap_halves	0	ptr struct CpuState	correct	correct	0.042	0.750	0	2	2
+O0	05_anon_union	cpu_swap_halves	1	u32	correct				0	2	2
+O0	05_anon_union	main	-1	i32	unknown				0	0	0
+O0	06_multidim_array	board_init	0	ptr struct Board	correct	wrong	0.000		0	2	2
+O0	06_multidim_array	board_init	1	ptr i8	correct	wrong			0	2	2
+O0	06_multidim_array	row_sum	0	ptr i32[8]	correct	wrong			0	2	2
+O0	06_multidim_array	row_sum	1	i32	correct				0	2	2
+O0	06_multidim_array	row_sum	-1	i32	correct				0	2	2
+O0	06_multidim_array	board_convolve	0	ptr struct Board	correct	wrong	0.000		0	3	3
+O0	06_multidim_array	board_convolve	1	i32	correct				0	3	3
+O0	06_multidim_array	board_convolve	2	ptr f32[8]	correct	correct			0	3	3
+O0	06_multidim_array	tensor_fill	0	ptr struct Tensor4	correct	correct	0.444	1.000	0	1	1
+O0	06_multidim_array	tensor_trace	0	ptr struct Tensor4	correct	wrong	0.000		0	1	1
+O0	06_multidim_array	tensor_trace	-1	f64	unknown				0	1	1
+O0	06_multidim_array	grid_fill	0	ptr struct StringGrid	correct	wrong	0.000		0	1	1
+O0	06_multidim_array	main	-1	i32	unknown				0	0	0
+O0	07_singly_linked_list	list_init	0	ptr struct EmployeeList	correct	wrong	1.000	1.000	1	1	1
+O0	07_singly_linked_list	node_new	0	u32	correct				0	5	5
+O0	07_singly_linked_list	node_new	1	ptr i8	correct	wrong			0	5	5
+O0	07_singly_linked_list	node_new	2	ptr i8	correct	wrong			0	5	5
+O0	07_singly_linked_list	node_new	3	u32	correct				0	5	5
+O0	07_singly_linked_list	node_new	4	u16	correct				0	5	5
+O0	07_singly_linked_list	node_new	-1	ptr struct ListNode	correct	correct	0.111	1.000	0	5	5
+O0	07_singly_linked_list	list_push_back	0	ptr struct EmployeeList	correct	wrong	1.000	1.000	1	2	2
+O0	07_singly_linked_list	list_push_back	1	ptr struct ListNode	correct	correct	0.111	1.000	0	2	2
+O0	07_singly_linked_list	list_push_front	0	ptr struct EmployeeList	correct	wrong	1.000	1.000	1	2	2
+O0	07_singly_linked_list	list_push_front	1	ptr struct ListNode	correct	correct	0.111	1.000	0	2	2
+O0	07_singly_linked_list	list_find	0	ptr struct EmployeeList	correct	wrong	1.000	1.000	1	2	2
+O0	07_singly_linked_list	list_find	1	u32	correct				0	2	2
+O0	07_singly_linked_list	list_find	-1	ptr struct ListNode	correct	correct	0.111	1.000	0	2	2
+O0	07_singly_linked_list	list_remove_dept	0	ptr struct EmployeeList	correct	wrong	1.000	1.000	1	2	2
+O0	07_singly_linked_list	list_remove_dept	1	ptr i8	correct	wrong			0	2	2
+O0	07_singly_linked_list	list_remove_dept	-1	i32	correct				0	2	2
+O0	07_singly_linked_list	list_reverse	0	ptr struct EmployeeList	correct	wrong	1.000	1.000	1	1	1
+O0	07_singly_linked_list	merge_sorted	0	ptr struct ListNode	correct	correct	0.111	1.000	0	2	2
+O0	07_singly_linked_list	merge_sorted	1	ptr struct ListNode	correct	correct	0.111	1.000	0	2	2
+O0	07_singly_linked_list	merge_sorted	-1	ptr struct ListNode	correct	correct	0.111	1.000	0	2	2
+O0	07_singly_linked_list	merge_sort	0	ptr struct ListNode	correct	correct	0.111	1.000	0	1	1
+O0	07_singly_linked_list	merge_sort	-1	ptr struct ListNode	correct	correct	0.111	1.000	0	1	1
+O0	07_singly_linked_list	list_sort_by_salary	0	ptr struct EmployeeList	correct	wrong	1.000	1.000	1	1	1
+O0	07_singly_linked_list	list_dump	0	ptr struct EmployeeList	correct	wrong	1.000	1.000	1	2	2
+O0	07_singly_linked_list	list_dump	1	ptr i8	correct	wrong			0	2	2
+O0	07_singly_linked_list	list_free	0	ptr struct EmployeeList	correct	wrong	1.000	1.000	1	1	1
+O0	07_singly_linked_list	main	-1	i32	unknown				0	0	0
+O0	08_doubly_linked_list	lru_init	0	ptr struct LruCache	correct	correct	0.273	1.000	0	2	2
+O0	08_doubly_linked_list	lru_init	1	u64	correct				0	2	2
+O0	08_doubly_linked_list	dnode_unlink	0	ptr struct DNode	correct	correct	0.143	0.444	0	1	1
+O0	08_doubly_linked_list	dnode_insert_after	0	ptr struct DNode	correct	correct	0.143	0.444	0	2	2
+O0	08_doubly_linked_list	dnode_insert_after	1	ptr struct DNode	correct	correct	0.143	0.444	0	2	2
+O0	08_doubly_linked_list	dnode_insert_before	0	ptr struct DNode	correct	correct	0.143	0.444	0	2	2
+O0	08_doubly_linked_list	dnode_insert_before	1	ptr struct DNode	correct	correct	0.143	0.444	0	2	2
+O0	08_doubly_linked_list	lru_lookup	0	ptr struct LruCache	correct	correct	0.273	1.000	0	2	2
+O0	08_doubly_linked_list	lru_lookup	1	u32	correct				0	2	2
+O0	08_doubly_linked_list	lru_lookup	-1	ptr struct DNode	correct	correct	0.143	0.444	0	2	2
+O0	08_doubly_linked_list	lru_put	0	ptr struct LruCache	correct	correct	0.273	1.000	0	3	3
+O0	08_doubly_linked_list	lru_put	1	u32	correct				0	3	3
+O0	08_doubly_linked_list	lru_put	2	ptr i8	correct	correct			0	3	3
+O0	08_doubly_linked_list	lru_dump	0	ptr struct LruCache	correct	correct	0.273	1.000	0	2	2
+O0	08_doubly_linked_list	lru_dump	1	ptr i8	correct	wrong			0	2	2
+O0	08_doubly_linked_list	lru_rotate	0	ptr struct LruCache	correct	correct	0.273	1.000	0	2	2
+O0	08_doubly_linked_list	lru_rotate	1	i32	wrong				0	2	2
+O0	08_doubly_linked_list	lru_free	0	ptr struct LruCache	correct	correct	0.273	1.000	0	1	1
+O0	08_doubly_linked_list	main	-1	i32	unknown				0	0	0
+O0	09_binary_tree	stack_push	0	ptr struct NodeStack	correct	correct	0.015	1.000	0	2	2
+O0	09_binary_tree	stack_push	1	ptr struct BstNode	correct	correct	0.200	1.000	0	2	2
+O0	09_binary_tree	stack_pop	0	ptr struct NodeStack	correct	correct	0.015	1.000	0	1	1
+O0	09_binary_tree	stack_pop	-1	ptr struct BstNode	correct	correct	0.033	1.000	0	1	1
+O0	09_binary_tree	stack_empty	0	ptr struct NodeStack	correct	correct	0.015	1.000	0	1	1
+O0	09_binary_tree	stack_empty	-1	i32	unknown				0	1	1
+O0	09_binary_tree	queue_push	0	ptr struct NodeQueue	correct	correct	0.030	1.000	0	2	2
+O0	09_binary_tree	queue_push	1	ptr struct BstNode	correct	correct	0.200	1.000	0	2	2
+O0	09_binary_tree	queue_pop	0	ptr struct NodeQueue	correct	correct	0.030	1.000	0	1	1
+O0	09_binary_tree	queue_pop	-1	ptr struct BstNode	correct	correct	0.100	1.000	0	1	1
+O0	09_binary_tree	queue_empty	0	ptr struct NodeQueue	correct	correct	0.030	1.000	0	1	1
+O0	09_binary_tree	queue_empty	-1	i32	unknown				0	1	1
+O0	09_binary_tree	bst_node_new	0	ptr i8	correct	wrong			0	2	2
+O0	09_binary_tree	bst_node_new	1	u32	correct				0	2	2
+O0	09_binary_tree	bst_node_new	-1	ptr struct BstNode	correct	correct	0.200	1.000	0	2	2
+O0	09_binary_tree	bst_insert	0	ptr struct Bst	correct	wrong	1.000	1.000	1	3	3
+O0	09_binary_tree	bst_insert	1	ptr i8	correct	wrong			0	3	3
+O0	09_binary_tree	bst_insert	2	u32	correct				0	3	3
+O0	09_binary_tree	bst_find	0	ptr struct Bst	correct	wrong	1.000	1.000	1	2	2
+O0	09_binary_tree	bst_find	1	ptr i8	correct	wrong			0	2	2
+O0	09_binary_tree	bst_find	-1	ptr struct BstNode	correct	correct	0.200	1.000	0	2	2
+O0	09_binary_tree	bst_min	0	ptr struct BstNode	correct	correct	0.200	1.000	0	1	1
+O0	09_binary_tree	bst_min	-1	ptr struct BstNode	correct	correct	0.200	1.000	0	1	1
+O0	09_binary_tree	bst_successor	0	ptr struct BstNode	correct	correct	0.200	1.000	0	1	1
+O0	09_binary_tree	bst_successor	-1	ptr struct BstNode	correct	correct	0.200	1.000	0	1	1
+O0	09_binary_tree	bst_height	0	ptr struct BstNode	correct	correct	0.200	1.000	0	1	1
+O0	09_binary_tree	bst_height	-1	i32	correct				0	1	1
+O0	09_binary_tree	bst_inorder_recursive	0	ptr struct BstNode	correct	correct	0.200	1.000	0	2	2
+O0	09_binary_tree	bst_inorder_recursive	1	i32	correct				0	2	2
+O0	09_binary_tree	bst_inorder_iterative	0	ptr struct Bst	correct	wrong	1.000	1.000	1	1	1
+O0	09_binary_tree	bst_levelorder	0	ptr struct Bst	correct	wrong	1.000	1.000	1	1	1
+O0	09_binary_tree	bst_free	0	ptr struct BstNode	correct	correct	0.200	1.000	0	1	1
+O0	09_binary_tree	main	-1	i32	unknown				0	0	0
+O0	10_avl_tree	node_height	0	ptr struct AvlNode	correct	correct	0.194	0.600	0	1	1
+O0	10_avl_tree	node_height	-1	i8	wrong				0	1	1
+O0	10_avl_tree	max8	0	i8	wrong				0	2	2
+O0	10_avl_tree	max8	1	i8	wrong				0	2	2
+O0	10_avl_tree	max8	-1	i8	wrong				0	2	2
+O0	10_avl_tree	fix_height	0	ptr struct AvlNode	correct	correct	0.194	0.600	0	1	1
+O0	10_avl_tree	balance_factor	0	ptr struct AvlNode	correct	correct	0.194	0.600	0	1	1
+O0	10_avl_tree	balance_factor	-1	i32	correct				0	1	1
+O0	10_avl_tree	rotate	0	ptr struct AvlNode	correct	correct	0.194	0.600	0	2	2
+O0	10_avl_tree	rotate	1	i32	correct				0	2	2
+O0	10_avl_tree	rotate	-1	ptr struct AvlNode	correct	correct	0.194	0.600	0	2	2
+O0	10_avl_tree	rebalance	0	ptr struct AvlTree	correct	correct	1.000	1.000	1	2	2
+O0	10_avl_tree	rebalance	1	ptr struct AvlNode	correct	correct	0.194	0.600	0	2	2
+O0	10_avl_tree	rebalance	-1	ptr struct AvlNode	correct	correct	0.194	0.600	0	2	2
+O0	10_avl_tree	avl_node_new	0	u32	wrong				0	2	2
+O0	10_avl_tree	avl_node_new	1	ptr struct City	correct	correct	0.074	0.333	0	2	2
+O0	10_avl_tree	avl_node_new	-1	ptr struct AvlNode	correct	correct	0.194	0.600	0	2	2
+O0	10_avl_tree	avl_insert_rec	0	ptr struct AvlTree	correct	correct	1.000	1.000	1	4	4
+O0	10_avl_tree	avl_insert_rec	1	ptr struct AvlNode	correct	correct	0.194	0.600	0	4	4
+O0	10_avl_tree	avl_insert_rec	2	u32	wrong				0	4	4
+O0	10_avl_tree	avl_insert_rec	3	ptr struct City	correct	correct	0.074	0.333	0	4	4
+O0	10_avl_tree	avl_insert_rec	-1	ptr struct AvlNode	correct	correct	0.194	0.600	0	4	4
+O0	10_avl_tree	avl_insert	0	ptr struct AvlTree	correct	correct	1.000	1.000	1	2	2
+O0	10_avl_tree	avl_insert	1	ptr struct City	correct	correct	0.074	0.333	0	2	2
+O0	10_avl_tree	avl_min	0	ptr struct AvlNode	correct	correct	0.194	0.600	0	1	1
+O0	10_avl_tree	avl_min	-1	ptr struct AvlNode	correct	correct	0.194	0.600	0	1	1
+O0	10_avl_tree	avl_erase_rec	0	ptr struct AvlTree	correct	correct	1.000	1.000	1	3	3
+O0	10_avl_tree	avl_erase_rec	1	ptr struct AvlNode	correct	correct	0.194	0.600	0	3	3
+O0	10_avl_tree	avl_erase_rec	2	u32	wrong				0	3	3
+O0	10_avl_tree	avl_erase_rec	-1	ptr struct AvlNode	correct	correct	0.194	0.600	0	3	3
+O0	10_avl_tree	avl_erase	0	ptr struct AvlTree	correct	correct	1.000	1.000	1	2	2
+O0	10_avl_tree	avl_erase	1	u32	wrong				0	2	2
+O0	10_avl_tree	avl_find_ge	0	ptr struct AvlNode	correct	correct	0.194	0.600	0	2	2
+O0	10_avl_tree	avl_find_ge	1	u32	correct				0	2	2
+O0	10_avl_tree	avl_find_ge	-1	ptr struct AvlNode	correct	correct	0.194	0.600	0	2	2
+O0	10_avl_tree	avl_print	0	ptr struct AvlNode	correct	correct	0.194	0.600	0	2	2
+O0	10_avl_tree	avl_print	1	i32	correct				0	2	2
+O0	10_avl_tree	avl_check	0	ptr struct AvlNode	correct	correct	0.194	0.600	0	1	1
+O0	10_avl_tree	avl_check	-1	i32	unknown				0	1	1
+O0	10_avl_tree	avl_free	0	ptr struct AvlNode	correct	correct	0.194	0.600	0	1	1
+O0	10_avl_tree	main	-1	i32	unknown				0	0	0
+O0	11_intrusive_list	hlist_add_tail	0	ptr struct HList	correct	correct	1.000	0.182	0	2	2
+O0	11_intrusive_list	hlist_add_tail	1	ptr struct HList	correct	correct	1.000	0.182	0	2	2
+O0	11_intrusive_list	hlist_del	0	ptr struct HList	correct	correct	1.000	1.000	1	1	1
+O0	11_intrusive_list	hlist_empty	0	ptr struct HList	correct	correct	1.000	0.182	0	1	1
+O0	11_intrusive_list	hlist_empty	-1	i32	unknown				0	1	1
+O0	11_intrusive_list	hlist_len	0	ptr struct HList	correct	correct	1.000	0.182	0	1	1
+O0	11_intrusive_list	hlist_len	-1	u64	unknown				0	1	1
+O0	11_intrusive_list	sched_init	0	ptr struct Scheduler	correct	correct	1.000	0.909	0	1	1
+O0	11_intrusive_list	task_create	0	ptr struct Scheduler	correct	correct	1.000	0.909	0	4	4
+O0	11_intrusive_list	task_create	1	u32	correct				0	4	4
+O0	11_intrusive_list	task_create	2	ptr i8	correct	wrong			0	4	4
+O0	11_intrusive_list	task_create	3	u32	correct				0	4	4
+O0	11_intrusive_list	task_create	-1	ptr struct Task	correct	correct	0.292	1.000	0	4	4
+O0	11_intrusive_list	sched_pick	0	ptr struct Scheduler	correct	correct	1.000	0.909	0	1	1
+O0	11_intrusive_list	sched_pick	-1	ptr struct Task	correct	correct	0.250	0.545	0	1	1
+O0	11_intrusive_list	sched_run_slice	0	ptr struct Scheduler	correct	correct	1.000	0.909	0	2	2
+O0	11_intrusive_list	sched_run_slice	1	u64	correct				0	2	2
+O0	11_intrusive_list	dump_all	0	ptr struct Scheduler	correct	correct	1.000	0.909	0	1	1
+O0	11_intrusive_list	main	-1	i32	unknown				0	0	0
+O0	12_bitfields_packed	pte_make	0	u64	correct				0	4	4
+O0	12_bitfields_packed	pte_make	1	i32	correct				0	4	4
+O0	12_bitfields_packed	pte_make	2	i32	correct				0	4	4
+O0	12_bitfields_packed	pte_make	3	i32	correct				0	4	4
+O0	12_bitfields_packed	pte_make	-1	struct PageEntry	wrong				0	4	4
+O0	12_bitfields_packed	pte_dump	0	ptr i8	correct	wrong			0	2	2
+O0	12_bitfields_packed	pte_dump	1	ptr struct PageEntry	correct	correct	1.000	0.500	0	2	2
+O0	12_bitfields_packed	sample_fill	0	ptr struct SensorSample	correct	correct	0.667	0.400	0	6	6
+O0	12_bitfields_packed	sample_fill	1	u32	correct				0	6	6
+O0	12_bitfields_packed	sample_fill	2	i32	correct				0	6	6
+O0	12_bitfields_packed	sample_fill	3	u32	correct				0	6	6
+O0	12_bitfields_packed	sample_fill	4	i32	correct				0	6	6
+O0	12_bitfields_packed	sample_fill	5	u32	correct				0	6	6
+O0	12_bitfields_packed	record_build	0	ptr struct WireRecord	correct	correct	1.000	1.000	1	4	4
+O0	12_bitfields_packed	record_build	1	u32	correct				0	4	4
+O0	12_bitfields_packed	record_build	2	u16	correct				0	4	4
+O0	12_bitfields_packed	record_build	3	ptr struct SensorSample	correct	correct	0.667	0.400	0	4	4
+O0	12_bitfields_packed	main	-1	i32	unknown				0	0	0
+O0	13_vtable_objects	circle_area	0	ptr struct Shape	correct	wrong	0.000		0	1	1
+O0	13_vtable_objects	circle_area	-1	f64	unknown				0	1	1
+O0	13_vtable_objects	circle_perim	0	ptr struct Shape	correct	wrong	0.000		0	1	1
+O0	13_vtable_objects	circle_perim	-1	f64	unknown				0	1	1
+O0	13_vtable_objects	circle_scale	0	ptr struct Shape	correct	correct	0.000	0.000	0	2	1
+O0	13_vtable_objects	circle_scale	1	f64	unknown				0	2	1
+O0	13_vtable_objects	circle_describe	0	ptr struct Shape	correct	wrong	0.000		0	3	3
+O0	13_vtable_objects	circle_describe	1	ptr i8	correct	wrong			0	3	3
+O0	13_vtable_objects	circle_describe	2	u64	correct				0	3	3
+O0	13_vtable_objects	rect_area	0	ptr struct Shape	correct	correct	0.000	0.000	0	1	1
+O0	13_vtable_objects	rect_area	-1	f64	unknown				0	1	1
+O0	13_vtable_objects	rect_perim	0	ptr struct Shape	correct	wrong	0.000		0	1	1
+O0	13_vtable_objects	rect_perim	-1	f64	unknown				0	1	1
+O0	13_vtable_objects	rect_scale	0	ptr struct Shape	correct	correct	0.000	0.000	0	2	1
+O0	13_vtable_objects	rect_scale	1	f64	unknown				0	2	1
+O0	13_vtable_objects	rect_describe	0	ptr struct Shape	correct	wrong	0.000		0	3	3
+O0	13_vtable_objects	rect_describe	1	ptr i8	correct	wrong			0	3	3
+O0	13_vtable_objects	rect_describe	2	u64	correct				0	3	3
+O0	13_vtable_objects	poly_area	0	ptr struct Shape	correct	correct	0.000	0.000	0	1	1
+O0	13_vtable_objects	poly_area	-1	f64	unknown				0	1	1
+O0	13_vtable_objects	poly_perim	0	ptr struct Shape	correct	correct	0.000	0.000	0	1	1
+O0	13_vtable_objects	poly_perim	-1	f64	unknown				0	1	1
+O0	13_vtable_objects	poly_scale	0	ptr struct Shape	correct	correct	0.000	0.000	0	2	1
+O0	13_vtable_objects	poly_scale	1	f64	unknown				0	2	1
+O0	13_vtable_objects	poly_describe	0	ptr struct Shape	correct	correct	0.000	0.000	0	3	3
+O0	13_vtable_objects	poly_describe	1	ptr i8	correct	wrong			0	3	3
+O0	13_vtable_objects	poly_describe	2	u64	correct				0	3	3
+O0	13_vtable_objects	rrect_area	0	ptr struct Shape	correct	correct	0.000	0.000	0	1	1
+O0	13_vtable_objects	rrect_area	-1	f64	unknown				0	1	1
+O0	13_vtable_objects	rrect_describe	0	ptr struct Shape	correct	wrong	0.000		0	3	3
+O0	13_vtable_objects	rrect_describe	1	ptr i8	correct	wrong			0	3	3
+O0	13_vtable_objects	rrect_describe	2	u64	correct				0	3	3
+O0	13_vtable_objects	generic_destroy	0	ptr struct Shape	correct	wrong	0.000		0	1	1
+O0	13_vtable_objects	shape_init	0	ptr struct Shape	correct	correct	0.143	0.400	0	3	3
+O0	13_vtable_objects	shape_init	1	ptr struct ShapeVTable	correct	wrong	0.000		0	3	3
+O0	13_vtable_objects	shape_init	2	ptr i8	correct	wrong			0	3	3
+O0	13_vtable_objects	shape_init	-1	ptr struct Shape	correct	correct	0.143	0.400	0	3	3
+O0	13_vtable_objects	make_circle	0	f64	correct				0	2	1
+O0	13_vtable_objects	make_circle	1	ptr i8	unknown	wrong			0	2	1
+O0	13_vtable_objects	make_rect	0	f64	correct				0	3	1
+O0	13_vtable_objects	make_rect	1	f64	unknown				0	3	1
+O0	13_vtable_objects	make_rect	2	ptr i8	unknown	wrong			0	3	1
+O0	13_vtable_objects	make_rrect	0	f64	correct				0	4	1
+O0	13_vtable_objects	make_rrect	1	f64	unknown				0	4	1
+O0	13_vtable_objects	make_rrect	2	f64	unknown				0	4	1
+O0	13_vtable_objects	make_rrect	3	ptr i8	unknown	wrong			0	4	1
+O0	13_vtable_objects	make_poly	0	ptr f64	correct	wrong			0	3	3
+O0	13_vtable_objects	make_poly	1	u32	wrong				0	3	3
+O0	13_vtable_objects	make_poly	2	ptr i8	correct	wrong			0	3	3
+O0	13_vtable_objects	report	0	ptr ptr struct Shape	correct	wrong			0	2	2
+O0	13_vtable_objects	report	1	u64	correct				0	2	2
+O0	13_vtable_objects	main	-1	i32	unknown				0	0	0
+O0	14_array_of_structs	aos_init	0	ptr struct Particle	correct	correct	0.000	0.000	0	2	2
+O0	14_array_of_structs	aos_init	1	u64	correct				0	2	2
+O0	14_array_of_structs	aos_to_soa	0	ptr struct Particle	correct	correct	0.000	0.000	0	3	3
+O0	14_array_of_structs	aos_to_soa	1	u64	correct				0	3	3
+O0	14_array_of_structs	aos_to_soa	2	ptr struct ParticleSoa	correct	correct	0.009	1.000	0	3	3
+O0	14_array_of_structs	soa_step	0	ptr struct ParticleSoa	correct	correct	0.009	1.000	0	2	1
+O0	14_array_of_structs	soa_step	1	f32	unknown				0	2	1
+O0	14_array_of_structs	compute_stats	0	ptr struct Particle	correct	correct	0.000	0.000	0	2	3
+O0	14_array_of_structs	compute_stats	1	u64	wrong				0	2	3
+O0	14_array_of_structs	compute_stats	-1	struct SystemStats	unknown				0	2	3
+O0	14_array_of_structs	stats_rescale	0	struct SystemStats	unknown				0	2	23
+O0	14_array_of_structs	stats_rescale	1	f64	correct				0	2	23
+O0	14_array_of_structs	stats_rescale	-1	struct SystemStats	unknown				0	2	23
+O0	14_array_of_structs	aos_dump	0	ptr struct Particle	correct	correct	0.000	0.000	0	3	3
+O0	14_array_of_structs	aos_dump	1	u64	correct				0	3	3
+O0	14_array_of_structs	aos_dump	2	ptr i8	correct	wrong			0	3	3
+O0	14_array_of_structs	stats_dump	0	ptr struct SystemStats	correct	correct	0.081	1.000	0	2	2
+O0	14_array_of_structs	stats_dump	1	ptr i8	correct	wrong			0	2	2
+O0	14_array_of_structs	main	-1	i32	unknown				0	0	0
+O0	15_ast_interpreter	node_new	0	enum	correct				0	1	1
+O0	15_ast_interpreter	node_new	-1	ptr struct Node	correct	correct	0.233	1.000	0	1	1
+O0	15_ast_interpreter	lit_num	0	f64	unknown				0	1	0
+O0	15_ast_interpreter	lit_num	-1	ptr struct Node	correct	correct	0.233	1.000	0	1	0
+O0	15_ast_interpreter	lit_str	0	ptr i8	correct	wrong			0	1	1
+O0	15_ast_interpreter	lit_str	-1	ptr struct Node	correct	correct	0.233	1.000	0	1	1
+O0	15_ast_interpreter	var_ref	0	ptr i8	correct	wrong			0	1	1
+O0	15_ast_interpreter	var_ref	-1	ptr struct Node	correct	correct	0.233	1.000	0	1	1
+O0	15_ast_interpreter	binary	0	enum	wrong				0	3	3
+O0	15_ast_interpreter	binary	1	ptr struct Node	correct	correct	0.233	1.000	0	3	3
+O0	15_ast_interpreter	binary	2	ptr struct Node	correct	correct	0.233	1.000	0	3	3
+O0	15_ast_interpreter	binary	-1	ptr struct Node	correct	correct	0.233	1.000	0	3	3
+O0	15_ast_interpreter	unary	0	enum	wrong				0	2	2
+O0	15_ast_interpreter	unary	1	ptr struct Node	correct	correct	0.233	1.000	0	2	2
+O0	15_ast_interpreter	unary	-1	ptr struct Node	correct	correct	0.233	1.000	0	2	2
+O0	15_ast_interpreter	assign	0	ptr i8	correct	wrong			0	2	2
+O0	15_ast_interpreter	assign	1	ptr struct Node	correct	correct	0.233	1.000	0	2	2
+O0	15_ast_interpreter	assign	-1	ptr struct Node	correct	correct	0.233	1.000	0	2	2
+O0	15_ast_interpreter	if_expr	0	ptr struct Node	correct	correct	0.233	1.000	0	3	3
+O0	15_ast_interpreter	if_expr	1	ptr struct Node	correct	correct	0.233	1.000	0	3	3
+O0	15_ast_interpreter	if_expr	2	ptr struct Node	correct	correct	0.233	1.000	0	3	3
+O0	15_ast_interpreter	if_expr	-1	ptr struct Node	correct	correct	0.233	1.000	0	3	3
+O0	15_ast_interpreter	call1	0	ptr i8	correct	wrong			0	2	2
+O0	15_ast_interpreter	call1	1	ptr struct Node	correct	correct	0.233	1.000	0	2	2
+O0	15_ast_interpreter	call1	-1	ptr struct Node	correct	correct	0.233	1.000	0	2	2
+O0	15_ast_interpreter	seq_of	0	ptr ptr struct Node	correct	wrong			0	2	2
+O0	15_ast_interpreter	seq_of	1	u32	correct				0	2	2
+O0	15_ast_interpreter	seq_of	-1	ptr struct Node	correct	correct	0.233	1.000	0	2	2
+O0	15_ast_interpreter	mk_num	0	f64	wrong				0	1	1
+O0	15_ast_interpreter	mk_num	-1	struct Value	unknown				0	1	1
+O0	15_ast_interpreter	mk_bool	0	i32	wrong				0	1	2
+O0	15_ast_interpreter	mk_bool	-1	struct Value	unknown				0	1	2
+O0	15_ast_interpreter	mk_nil	-1	struct Value	unknown				0	0	1
+O0	15_ast_interpreter	env_slot	0	ptr struct Env	correct	correct	0.007	1.000	0	2	2
+O0	15_ast_interpreter	env_slot	1	ptr i8	correct	wrong			0	2	2
+O0	15_ast_interpreter	env_slot	-1	ptr struct Value	correct	correct	0.500	0.667	0	2	2
+O0	15_ast_interpreter	truthy	0	ptr struct Value	correct	correct	0.500	0.667	0	1	1
+O0	15_ast_interpreter	truthy	-1	i32	wrong				0	1	1
+O0	15_ast_interpreter	apply_binary	0	enum	wrong				0	3	12
+O0	15_ast_interpreter	apply_binary	1	struct Value	unknown				0	3	12
+O0	15_ast_interpreter	apply_binary	2	struct Value	unknown				0	3	12
+O0	15_ast_interpreter	apply_binary	-1	struct Value	unknown				0	3	12
+O0	15_ast_interpreter	builtin	0	ptr i8	correct	correct			0	2	9
+O0	15_ast_interpreter	builtin	1	struct Value	unknown				0	2	9
+O0	15_ast_interpreter	builtin	-1	struct Value	unknown				0	2	9
+O0	15_ast_interpreter	eval	0	ptr struct Node	correct	correct	0.067	0.667	0	2	3
+O0	15_ast_interpreter	eval	1	ptr struct Env	correct	correct	0.000	0.000	0	2	3
+O0	15_ast_interpreter	eval	-1	struct Value	unknown				0	2	3
+O0	15_ast_interpreter	value_print	0	ptr struct Value	correct	correct	0.750	1.000	0	1	1
+O0	15_ast_interpreter	ast_count	0	ptr struct Node	correct	correct	0.233	1.000	0	1	1
+O0	15_ast_interpreter	ast_count	-1	u32	correct				0	1	1
+O0	15_ast_interpreter	ast_free	0	ptr struct Node	correct	correct	0.233	1.000	0	1	1
+O0	15_ast_interpreter	main	-1	i32	unknown				0	0	0
+O0	16_hash_table	hash_key	0	ptr i8	correct	wrong			0	2	2
+O0	16_hash_table	hash_key	1	u64	correct				0	2	2
+O0	16_hash_table	hash_key	-1	u32	correct				0	2	2
+O0	16_hash_table	ht_init	0	ptr struct HashTable	correct	correct	1.000	1.000	1	2	2
+O0	16_hash_table	ht_init	1	u32	correct				0	2	2
+O0	16_hash_table	entry_new	0	ptr i8	correct	wrong			0	2	2
+O0	16_hash_table	entry_new	1	u32	correct				0	2	2
+O0	16_hash_table	entry_new	-1	ptr struct Entry	correct	correct	1.000	1.000	1	2	2
+O0	16_hash_table	ht_grow	0	ptr struct HashTable	correct	correct	1.000	1.000	1	1	1
+O0	16_hash_table	ht_lookup	0	ptr struct HashTable	correct	correct	1.000	1.000	1	2	2
+O0	16_hash_table	ht_lookup	1	ptr i8	correct	wrong			0	2	2
+O0	16_hash_table	ht_lookup	-1	ptr struct Entry	correct	correct	1.000	1.000	1	2	2
+O0	16_hash_table	ht_put	0	ptr struct HashTable	correct	correct	1.000	1.000	1	4	3
+O0	16_hash_table	ht_put	1	ptr i8	correct	wrong			0	4	3
+O0	16_hash_table	ht_put	2	f64	wrong				0	4	3
+O0	16_hash_table	ht_put	3	u8	wrong				0	4	3
+O0	16_hash_table	ht_put	-1	ptr struct Entry	correct	correct	1.000	1.000	1	4	3
+O0	16_hash_table	ht_erase	0	ptr struct HashTable	correct	correct	1.000	1.000	1	2	2
+O0	16_hash_table	ht_erase	1	ptr i8	correct	wrong			0	2	2
+O0	16_hash_table	ht_erase	-1	i32	unknown				0	2	2
+O0	16_hash_table	ht_stats	0	ptr struct HashTable	correct	correct	1.000	1.000	1	1	1
+O0	16_hash_table	ht_dump	0	ptr struct HashTable	correct	correct	1.000	1.000	1	1	1
+O0	16_hash_table	ht_free	0	ptr struct HashTable	correct	correct	1.000	1.000	1	1	1
+O0	16_hash_table	main	-1	i32	unknown				0	0	0
+O0	17_graph	graph_add_vertex	0	ptr struct Graph	correct	correct	0.002	1.000	0	6	4
+O0	17_graph	graph_add_vertex	1	ptr i8	correct	wrong			0	6	4
+O0	17_graph	graph_add_vertex	2	ptr i8	correct	wrong			0	6	4
+O0	17_graph	graph_add_vertex	3	f64	wrong				0	6	4
+O0	17_graph	graph_add_vertex	4	f64	unknown				0	6	4
+O0	17_graph	graph_add_vertex	5	u32	unknown				0	6	4
+O0	17_graph	graph_add_vertex	-1	u16	wrong				0	6	4
+O0	17_graph	graph_add_edge	0	ptr struct Graph	correct	correct	0.002	1.000	0	5	5
+O0	17_graph	graph_add_edge	1	u16	wrong				0	5	5
+O0	17_graph	graph_add_edge	2	u16	wrong				0	5	5
+O0	17_graph	graph_add_edge	3	u16	correct				0	5	5
+O0	17_graph	graph_add_edge	4	u32	correct				0	5	5
+O0	17_graph	graph_add_bidir	0	ptr struct Graph	correct	correct	0.002	1.000	0	5	5
+O0	17_graph	graph_add_bidir	1	u16	wrong				0	5	5
+O0	17_graph	graph_add_bidir	2	u16	wrong				0	5	5
+O0	17_graph	graph_add_bidir	3	u16	correct				0	5	5
+O0	17_graph	graph_add_bidir	4	u32	correct				0	5	5
+O0	17_graph	state_reset	0	ptr struct SearchState	correct	correct	0.048	1.000	0	2	2
+O0	17_graph	state_reset	1	u16	correct				0	2	2
+O0	17_graph	bfs	0	ptr struct Graph	correct	correct	0.002	1.000	0	3	3
+O0	17_graph	bfs	1	u16	wrong				0	3	3
+O0	17_graph	bfs	2	ptr struct SearchState	correct	correct	0.048	1.000	0	3	3
+O0	17_graph	dfs_matrix	0	ptr struct Graph	correct	correct	0.002	1.000	0	4	4
+O0	17_graph	dfs_matrix	1	u16	wrong				0	4	4
+O0	17_graph	dfs_matrix	2	ptr struct SearchState	correct	correct	0.048	1.000	0	4	4
+O0	17_graph	dfs_matrix	3	i32	correct				0	4	4
+O0	17_graph	dijkstra	0	ptr struct Graph	correct	correct	0.002	1.000	0	3	3
+O0	17_graph	dijkstra	1	u16	wrong				0	3	3
+O0	17_graph	dijkstra	2	ptr struct SearchState	correct	correct	0.048	1.000	0	3	3
+O0	17_graph	print_path	0	ptr struct Graph	correct	wrong	0.000		0	3	3
+O0	17_graph	print_path	1	ptr struct SearchState	correct	correct	0.048	1.000	0	3	3
+O0	17_graph	print_path	2	u16	correct				0	3	3
+O0	17_graph	print_matrix	0	ptr struct Graph	correct	correct	0.002	1.000	0	1	1
+O0	17_graph	graph_free	0	ptr struct Graph	correct	correct	0.002	1.000	0	1	1
+O0	17_graph	main	-1	i32	unknown				0	0	0
+O0	18_opaque_generic	ring_new	0	u64	correct				0	2	2
+O0	18_opaque_generic	ring_new	1	u64	correct				0	2	2
+O0	18_opaque_generic	ring_new	-1	ptr struct RingBuffer	correct	correct	1.000	1.000	1	2	2
+O0	18_opaque_generic	ring_slot	0	ptr struct RingBuffer	correct	correct	1.000	1.000	1	2	2
+O0	18_opaque_generic	ring_slot	1	u64	correct				0	2	2
+O0	18_opaque_generic	ring_slot	-1	ptr void	correct	wrong			0	2	2
+O0	18_opaque_generic	ring_push	0	ptr struct RingBuffer	correct	correct	1.000	1.000	1	2	2
+O0	18_opaque_generic	ring_push	1	ptr void	correct	correct			0	2	2
+O0	18_opaque_generic	ring_pop	0	ptr struct RingBuffer	correct	correct	1.000	1.000	1	2	2
+O0	18_opaque_generic	ring_pop	1	ptr void	correct	correct			0	2	2
+O0	18_opaque_generic	ring_pop	-1	i32	unknown				0	2	2
+O0	18_opaque_generic	ring_size	0	ptr struct RingBuffer	correct	correct	1.000	1.000	1	1	1
+O0	18_opaque_generic	ring_size	-1	u64	correct				0	1	1
+O0	18_opaque_generic	ring_free	0	ptr struct RingBuffer	correct	correct	1.000	1.000	1	1	1
+O0	18_opaque_generic	ring_foreach	0	ptr struct RingBuffer	correct	correct	1.000	1.000	1	3	3
+O0	18_opaque_generic	ring_foreach	1	ptr fn	correct	wrong			0	3	3
+O0	18_opaque_generic	ring_foreach	2	ptr void	correct	correct			0	3	3
+O0	18_opaque_generic	arena_new	0	u64	correct				0	1	1
+O0	18_opaque_generic	arena_new	-1	ptr struct Arena	correct	correct	1.000	1.000	1	1	1
+O0	18_opaque_generic	arena_alloc	0	ptr struct Arena	correct	correct	1.000	1.000	1	3	3
+O0	18_opaque_generic	arena_alloc	1	u64	correct				0	3	3
+O0	18_opaque_generic	arena_alloc	2	u64	correct				0	3	3
+O0	18_opaque_generic	arena_alloc	-1	ptr void	correct	correct			0	3	3
+O0	18_opaque_generic	arena_free	0	ptr struct Arena	correct	correct	1.000	1.000	1	1	1
+O0	18_opaque_generic	main	-1	i32	unknown				0	0	0
+O0	19_state_machine	act_listen	0	ptr struct Connection	correct	correct	0.015	1.000	0	2	2
+O0	19_state_machine	act_listen	1	enum	correct				0	2	2
+O0	19_state_machine	act_syn	0	ptr struct Connection	correct	correct	0.060	1.000	0	2	2
+O0	19_state_machine	act_syn	1	enum	correct				0	2	2
+O0	19_state_machine	act_establish	0	ptr struct Connection	correct	correct	0.060	1.000	0	2	2
+O0	19_state_machine	act_establish	1	enum	correct				0	2	2
+O0	19_state_machine	act_data	0	ptr struct Connection	correct	correct	0.060	1.000	0	2	2
+O0	19_state_machine	act_data	1	enum	correct				0	2	2
+O0	19_state_machine	act_retry	0	ptr struct Connection	correct	correct	0.015	1.000	0	2	2
+O0	19_state_machine	act_retry	1	enum	correct				0	2	2
+O0	19_state_machine	act_close	0	ptr struct Connection	correct	correct	0.030	1.000	0	2	2
+O0	19_state_machine	act_close	1	enum	wrong				0	2	2
+O0	19_state_machine	act_reset	0	ptr struct Connection	correct	correct	0.015	1.000	0	2	2
+O0	19_state_machine	act_reset	1	enum	correct				0	2	2
+O0	19_state_machine	conn_init	0	ptr struct Connection	correct	correct	0.179	1.000	0	3	3
+O0	19_state_machine	conn_init	1	u32	correct				0	3	3
+O0	19_state_machine	conn_init	2	ptr i8	correct	wrong			0	3	3
+O0	19_state_machine	conn_feed	0	ptr struct Connection	correct	correct	0.179	1.000	0	2	2
+O0	19_state_machine	conn_feed	1	enum	correct				0	2	2
+O0	19_state_machine	conn_dump	0	ptr struct Connection	correct	correct	0.179	1.000	0	1	1
+O0	19_state_machine	main	-1	i32	unknown				0	0	0
+O0	20_combined_stress	link_init	0	ptr struct Link	correct	correct	1.000	1.000	1	1	1
+O0	20_combined_stress	link_add_tail	0	ptr struct Link	correct	correct	1.000	1.000	1	2	2
+O0	20_combined_stress	link_add_tail	1	ptr struct Link	correct	correct	1.000	1.000	1	2	2
+O0	20_combined_stress	link_del	0	ptr struct Link	correct	correct	1.000	1.000	1	1	1
+O0	20_combined_stress	container_new	0	ptr i8	correct	wrong			0	4	4
+O0	20_combined_stress	container_new	1	u16	correct				0	4	4
+O0	20_combined_stress	container_new	2	u16	correct				0	4	4
+O0	20_combined_stress	container_new	3	u16	correct				0	4	4
+O0	20_combined_stress	container_new	-1	ptr struct Container	correct	correct	0.258	0.800	0	4	4
+O0	20_combined_stress	container_attach	0	ptr struct Container	correct	correct	0.258	0.800	0	2	2
+O0	20_combined_stress	container_attach	1	ptr struct Container	correct	correct	0.258	0.800	0	2	2
+O0	20_combined_stress	container_attach	-1	ptr struct Container	correct	correct	0.258	0.800	0	2	2
+O0	20_combined_stress	item_new	0	ptr struct World	correct	correct	0.400	1.000	0	4	4
+O0	20_combined_stress	item_new	1	ptr i8	correct	wrong			0	4	4
+O0	20_combined_stress	item_new	2	enum	correct				0	4	4
+O0	20_combined_stress	item_new	3	i64	correct				0	4	4
+O0	20_combined_stress	item_new	-1	ptr struct Item	correct	correct	0.260	1.000	0	4	4
+O0	20_combined_stress	container_place	0	ptr struct Container	correct	correct	0.258	0.800	0	2	0
+O0	20_combined_stress	container_place	1	ptr struct Item	correct	correct	0.260	1.000	0	2	0
+O0	20_combined_stress	container_move	0	ptr struct Container	correct	correct	0.258	0.800	0	3	3
+O0	20_combined_stress	container_move	1	ptr struct Container	correct	correct	0.258	0.800	0	3	3
+O0	20_combined_stress	container_move	2	ptr struct Item	correct	correct	0.260	1.000	0	3	3
+O0	20_combined_stress	chunk_new	0	ptr u8	correct	wrong			0	3	3
+O0	20_combined_stress	chunk_new	1	u16	correct				0	3	3
+O0	20_combined_stress	chunk_new	2	u16	correct				0	3	3
+O0	20_combined_stress	chunk_new	-1	ptr struct ScriptChunk	correct	correct	1.000	0.200	0	3	3
+O0	20_combined_stress	index_insert	0	ptr struct IndexNode	correct	correct	1.000	1.000	1	3	3
+O0	20_combined_stress	index_insert	1	ptr struct Item	correct	correct	0.260	1.000	0	3	3
+O0	20_combined_stress	index_insert	2	u32	correct				0	3	3
+O0	20_combined_stress	index_insert	-1	ptr struct IndexNode	correct	correct	1.000	1.000	1	3	3
+O0	20_combined_stress	index_find	0	ptr struct IndexNode	correct	correct	1.000	1.000	1	2	2
+O0	20_combined_stress	index_find	1	u32	correct				0	2	2
+O0	20_combined_stress	index_find	-1	ptr struct Item	correct	correct	0.260	1.000	0	2	2
+O0	20_combined_stress	index_walk	0	ptr struct IndexNode	correct	correct	1.000	1.000	1	1	1
+O0	20_combined_stress	index_free	0	ptr struct IndexNode	correct	correct	1.000	1.000	1	1	1
+O0	20_combined_stress	container_value	0	ptr struct Container	correct	correct	0.258	0.800	0	1	1
+O0	20_combined_stress	container_value	-1	u32	correct				0	1	1
+O0	20_combined_stress	item_print	0	ptr struct Item	correct	correct	0.240	1.000	0	2	2
+O0	20_combined_stress	item_print	1	i32	correct				0	2	2
+O0	20_combined_stress	container_print	0	ptr struct Container	correct	correct	0.258	0.800	0	2	2
+O0	20_combined_stress	container_print	1	i32	correct				0	2	2
+O0	20_combined_stress	script_run	0	ptr struct Item	correct	correct	0.260	1.000	0	1	1
+O0	20_combined_stress	script_run	-1	i32	correct				0	1	1
+O0	20_combined_stress	container_free	0	ptr struct Container	correct	correct	0.258	0.800	0	1	1
+O0	20_combined_stress	main	-1	i32	unknown				0	0	0
+O1	01_basic_struct	main	-1	i32	unknown				0	0	0
+O1	02_recursive_struct	fs_attach	0	ptr struct FsNode	correct	correct	0.220	1.000	0	2	2
+O1	02_recursive_struct	fs_attach	1	ptr struct FsNode	correct	correct	0.220	1.000	0	2	2
+O1	02_recursive_struct	fs_attach	-1	ptr struct FsNode	correct	correct	0.220	1.000	0	2	2
+O1	02_recursive_struct	fs_recursive_size	0	ptr struct FsNode	correct	correct	0.220	1.000	0	1	1
+O1	02_recursive_struct	fs_recursive_size	-1	u64	correct				0	1	1
+O1	02_recursive_struct	fs_collect	0	ptr struct FsNode	correct	correct	0.220	1.000	0	3	3
+O1	02_recursive_struct	fs_collect	1	u32	correct				0	3	3
+O1	02_recursive_struct	fs_collect	2	ptr struct FsStats	correct	correct	1.000	1.000	1	3	3
+O1	02_recursive_struct	fs_path	0	ptr struct FsNode	correct	correct	0.220	1.000	0	3	3
+O1	02_recursive_struct	fs_path	1	ptr i8	correct	correct			0	3	3
+O1	02_recursive_struct	fs_path	2	u64	correct				0	3	3
+O1	02_recursive_struct	fs_path	-1	i32	correct				0	3	3
+O1	02_recursive_struct	fs_new	0	ptr i8	correct	correct			0	3	3
+O1	02_recursive_struct	fs_new	1	enum	correct				0	3	3
+O1	02_recursive_struct	fs_new	2	u64	correct				0	3	3
+O1	02_recursive_struct	fs_new	-1	ptr struct FsNode	correct	correct	0.220	1.000	0	3	3
+O1	02_recursive_struct	fs_find	0	ptr struct FsNode	correct	correct	0.220	1.000	0	2	2
+O1	02_recursive_struct	fs_find	1	ptr i8	correct	wrong			0	2	2
+O1	02_recursive_struct	fs_find	-1	ptr struct FsNode	correct	correct	0.220	1.000	0	2	2
+O1	02_recursive_struct	fs_print	0	ptr struct FsNode	correct	correct	0.220	1.000	0	2	2
+O1	02_recursive_struct	fs_print	1	u32	correct				0	2	2
+O1	02_recursive_struct	fs_free	0	ptr struct FsNode	correct	correct	0.220	1.000	0	1	1
+O1	02_recursive_struct	main	-1	i32	unknown				0	0	0
+O1	03_flexible_array	crc32_lite	0	ptr u8	correct	correct			0	2	2
+O1	03_flexible_array	crc32_lite	1	u64	correct				0	2	2
+O1	03_flexible_array	crc32_lite	-1	u32	correct				0	2	2
+O1	03_flexible_array	matrix_new	0	u32	correct				0	2	2
+O1	03_flexible_array	matrix_new	1	u32	wrong				0	2	2
+O1	03_flexible_array	matrix_new	-1	ptr struct Matrix	correct	correct	1.000	1.000	1	2	2
+O1	03_flexible_array	main	-1	i32	unknown				0	0	0
+O1	04_tagged_union	msg_checksum	0	ptr struct Message	correct	correct	0.069	1.000	0	1	1
+O1	04_tagged_union	msg_checksum	-1	u32	correct				0	1	1
+O1	04_tagged_union	msg_init	0	ptr struct Message	correct	correct	0.034	0.600	0	2	2
+O1	04_tagged_union	msg_init	1	enum	wrong				0	2	2
+O1	04_tagged_union	main	-1	i32	unknown				0	0	0
+O1	05_anon_union	reg_show	0	ptr i8	correct	wrong			0	2	2
+O1	05_anon_union	reg_show	1	union Reg32	wrong				0	2	2
+O1	05_anon_union	main	-1	i32	unknown				0	0	0
+O1	06_multidim_array	main	-1	i32	unknown				0	0	0
+O1	07_singly_linked_list	list_push_back	0	ptr struct EmployeeList	correct	wrong	1.000	1.000	1	2	2
+O1	07_singly_linked_list	list_push_back	1	ptr struct ListNode	correct	correct	0.111	1.000	0	2	2
+O1	07_singly_linked_list	merge_sort	0	ptr struct ListNode	correct	correct	0.111	1.000	0	1	1
+O1	07_singly_linked_list	merge_sort	-1	ptr struct ListNode	correct	correct	0.111	1.000	0	1	1
+O1	07_singly_linked_list	node_new	0	u32	correct				0	5	5
+O1	07_singly_linked_list	node_new	1	ptr i8	correct	wrong			0	5	5
+O1	07_singly_linked_list	node_new	2	ptr i8	correct	wrong			0	5	5
+O1	07_singly_linked_list	node_new	3	u32	correct				0	5	5
+O1	07_singly_linked_list	node_new	4	u16	correct				0	5	5
+O1	07_singly_linked_list	node_new	-1	ptr struct ListNode	correct	correct	0.111	1.000	0	5	5
+O1	07_singly_linked_list	list_dump	0	ptr struct EmployeeList	correct	wrong	1.000	1.000	1	2	1
+O1	07_singly_linked_list	list_dump	1	ptr i8	unknown	wrong			0	2	1
+O1	07_singly_linked_list	main	-1	i32	unknown				0	0	0
+O1	08_doubly_linked_list	lru_dump	0	ptr struct LruCache	correct	correct	0.212	1.000	0	2	1
+O1	08_doubly_linked_list	lru_dump	1	ptr i8	unknown	wrong			0	2	1
+O1	08_doubly_linked_list	lru_lookup	0	ptr struct LruCache	correct	correct	0.212	1.000	0	2	2
+O1	08_doubly_linked_list	lru_lookup	1	u32	correct				0	2	2
+O1	08_doubly_linked_list	lru_lookup	-1	ptr struct DNode	correct	correct	0.143	0.571	0	2	2
+O1	08_doubly_linked_list	main	-1	i32	unknown				0	0	0
+O1	09_binary_tree	bst_successor	0	ptr struct BstNode	correct	correct	0.200	1.000	0	1	1
+O1	09_binary_tree	bst_successor	-1	ptr struct BstNode	correct	correct	0.200	1.000	0	1	1
+O1	09_binary_tree	bst_height	0	ptr struct BstNode	correct	correct	0.200	1.000	0	1	1
+O1	09_binary_tree	bst_height	-1	i32	correct				0	1	1
+O1	09_binary_tree	bst_inorder_recursive	0	ptr struct BstNode	correct	correct	0.200	1.000	0	2	2
+O1	09_binary_tree	bst_inorder_recursive	1	i32	correct				0	2	2
+O1	09_binary_tree	bst_inorder_iterative	0	ptr struct Bst	correct	correct	0.333	1.000	0	1	1
+O1	09_binary_tree	bst_free	0	ptr struct BstNode	correct	correct	0.200	1.000	0	1	1
+O1	09_binary_tree	bst_levelorder	0	ptr struct Bst	correct	correct	0.333	1.000	0	1	1
+O1	09_binary_tree	main	-1	i32	unknown				0	0	0
+O1	10_avl_tree	avl_free	0	ptr struct AvlNode	correct	correct	0.129	0.571	0	1	1
+O1	10_avl_tree	balance_factor	0	ptr struct AvlNode	correct	correct	0.129	0.571	0	1	1
+O1	10_avl_tree	balance_factor	-1	i32	correct				0	1	1
+O1	10_avl_tree	avl_print	0	ptr struct AvlNode	correct	correct	0.129	0.571	0	2	2
+O1	10_avl_tree	avl_print	1	i32	correct				0	2	2
+O1	10_avl_tree	avl_check	0	ptr struct AvlNode	correct	correct	0.129	0.571	0	1	1
+O1	10_avl_tree	avl_check	-1	i32	wrong				0	1	1
+O1	10_avl_tree	fix_height	0	ptr struct AvlNode	correct	correct	0.129	0.571	0	1	1
+O1	10_avl_tree	rebalance	0	ptr struct AvlTree	correct	correct	0.833	1.000	0	2	2
+O1	10_avl_tree	rebalance	1	ptr struct AvlNode	correct	correct	0.129	0.571	0	2	2
+O1	10_avl_tree	rebalance	-1	ptr struct AvlNode	correct	correct	0.129	0.571	0	2	2
+O1	10_avl_tree	avl_insert_rec	0	ptr struct AvlTree	correct	correct	0.833	1.000	0	4	4
+O1	10_avl_tree	avl_insert_rec	1	ptr struct AvlNode	correct	correct	0.129	0.571	0	4	4
+O1	10_avl_tree	avl_insert_rec	2	u32	wrong				0	4	4
+O1	10_avl_tree	avl_insert_rec	3	ptr struct City	correct	correct	0.000	0.000	0	4	4
+O1	10_avl_tree	avl_insert_rec	-1	ptr struct AvlNode	correct	correct	0.129	0.571	0	4	4
+O1	10_avl_tree	avl_erase_rec	0	ptr struct AvlTree	correct	correct	0.833	1.000	0	3	3
+O1	10_avl_tree	avl_erase_rec	1	ptr struct AvlNode	correct	correct	0.129	0.571	0	3	3
+O1	10_avl_tree	avl_erase_rec	2	u32	wrong				0	3	3
+O1	10_avl_tree	avl_erase_rec	-1	ptr struct AvlNode	correct	correct	0.129	0.571	0	3	3
+O1	10_avl_tree	main	-1	i32	unknown				0	0	0
+O1	11_intrusive_list	hlist_del	0	ptr struct HList	correct	wrong	1.000	0.200	0	1	1
+O1	11_intrusive_list	hlist_len	0	ptr struct HList	correct	wrong	1.000	0.200	0	1	1
+O1	11_intrusive_list	hlist_len	-1	u64	unknown				0	1	1
+O1	11_intrusive_list	task_create	0	ptr struct Scheduler	correct	wrong	0.400	0.400	0	4	4
+O1	11_intrusive_list	task_create	1	u32	correct				0	4	4
+O1	11_intrusive_list	task_create	2	ptr i8	correct	wrong			0	4	4
+O1	11_intrusive_list	task_create	3	u32	correct				0	4	4
+O1	11_intrusive_list	task_create	-1	ptr struct Task	correct	correct	0.292	1.000	0	4	4
+O1	11_intrusive_list	main	-1	i32	unknown				0	0	0
+O1	12_bitfields_packed	pte_dump	0	ptr i8	correct	wrong			0	2	2
+O1	12_bitfields_packed	pte_dump	1	ptr struct PageEntry	correct	correct	1.000	0.500	0	2	2
+O1	12_bitfields_packed	main	-1	i32	unknown				0	0	0
+O1	13_vtable_objects	circle_area	0	ptr struct Shape	correct	wrong	0.000		0	1	1
+O1	13_vtable_objects	circle_area	-1	f64	unknown				0	1	1
+O1	13_vtable_objects	circle_perim	0	ptr struct Shape	correct	wrong	0.000		0	1	1
+O1	13_vtable_objects	circle_perim	-1	f64	unknown				0	1	1
+O1	13_vtable_objects	circle_scale	0	ptr struct Shape	correct	correct	0.000	0.000	0	2	1
+O1	13_vtable_objects	circle_scale	1	f64	unknown				0	2	1
+O1	13_vtable_objects	rect_area	0	ptr struct Shape	correct	wrong	0.000		0	1	1
+O1	13_vtable_objects	rect_area	-1	f64	unknown				0	1	1
+O1	13_vtable_objects	rect_perim	0	ptr struct Shape	correct	wrong	0.000		0	1	1
+O1	13_vtable_objects	rect_perim	-1	f64	unknown				0	1	1
+O1	13_vtable_objects	rect_scale	0	ptr struct Shape	correct	correct	0.000	0.000	0	2	1
+O1	13_vtable_objects	rect_scale	1	f64	unknown				0	2	1
+O1	13_vtable_objects	poly_area	0	ptr struct Shape	correct	correct	0.000	0.000	0	1	1
+O1	13_vtable_objects	poly_area	-1	f64	unknown				0	1	1
+O1	13_vtable_objects	poly_perim	0	ptr struct Shape	correct	correct	0.000	0.000	0	1	1
+O1	13_vtable_objects	poly_perim	-1	f64	unknown				0	1	1
+O1	13_vtable_objects	poly_scale	0	ptr struct Shape	correct	correct	0.000	0.000	0	2	1
+O1	13_vtable_objects	poly_scale	1	f64	unknown				0	2	1
+O1	13_vtable_objects	generic_destroy	0	ptr struct Shape	correct	wrong	0.000		0	1	1
+O1	13_vtable_objects	circle_describe	0	ptr struct Shape	correct	wrong	0.000		0	3	3
+O1	13_vtable_objects	circle_describe	1	ptr i8	correct	wrong			0	3	3
+O1	13_vtable_objects	circle_describe	2	u64	correct				0	3	3
+O1	13_vtable_objects	rect_describe	0	ptr struct Shape	correct	wrong	0.000		0	3	3
+O1	13_vtable_objects	rect_describe	1	ptr i8	correct	wrong			0	3	3
+O1	13_vtable_objects	rect_describe	2	u64	correct				0	3	3
+O1	13_vtable_objects	poly_describe	0	ptr struct Shape	correct	correct	0.000	0.000	0	3	3
+O1	13_vtable_objects	poly_describe	1	ptr i8	correct	wrong			0	3	3
+O1	13_vtable_objects	poly_describe	2	u64	correct				0	3	3
+O1	13_vtable_objects	rrect_describe	0	ptr struct Shape	correct	wrong	0.000		0	3	3
+O1	13_vtable_objects	rrect_describe	1	ptr i8	correct	wrong			0	3	3
+O1	13_vtable_objects	rrect_describe	2	u64	correct				0	3	3
+O1	13_vtable_objects	shape_init	0	ptr struct Shape	correct	correct	0.143	0.286	0	3	3
+O1	13_vtable_objects	shape_init	1	ptr struct ShapeVTable	correct	wrong	0.000		0	3	3
+O1	13_vtable_objects	shape_init	2	ptr i8	correct	wrong			0	3	3
+O1	13_vtable_objects	shape_init	-1	ptr struct Shape	correct	correct	0.143	0.286	0	3	3
+O1	13_vtable_objects	make_poly	0	ptr f64	correct	wrong			0	3	3
+O1	13_vtable_objects	make_poly	1	u32	wrong				0	3	3
+O1	13_vtable_objects	make_poly	2	ptr i8	correct	wrong			0	3	3
+O1	13_vtable_objects	report	0	ptr ptr struct Shape	correct	wrong			0	2	2
+O1	13_vtable_objects	report	1	u64	correct				0	2	2
+O1	13_vtable_objects	rrect_area	0	ptr struct Shape	correct	wrong	0.000		0	1	1
+O1	13_vtable_objects	rrect_area	-1	f64	unknown				0	1	1
+O1	13_vtable_objects	main	-1	i32	unknown				0	0	0
+O1	14_array_of_structs	aos_dump	0	ptr struct Particle	correct	correct	0.917	0.917	0	3	2
+O1	14_array_of_structs	aos_dump	1	u64	correct				0	3	2
+O1	14_array_of_structs	aos_dump	2	ptr i8	unknown	wrong			0	3	2
+O1	14_array_of_structs	stats_dump	0	ptr struct SystemStats	correct	correct	0.081	0.833	0	2	1
+O1	14_array_of_structs	stats_dump	1	ptr i8	unknown	wrong			0	2	1
+O1	14_array_of_structs	main	-1	i32	unknown				0	0	0
+O1	15_ast_interpreter	truthy	0	ptr struct Value	correct	correct	0.500	0.667	0	1	1
+O1	15_ast_interpreter	truthy	-1	i32	wrong				0	1	1
+O1	15_ast_interpreter	ast_count	0	ptr struct Node	correct	correct	0.200	0.857	0	1	1
+O1	15_ast_interpreter	ast_count	-1	u32	correct				0	1	1
+O1	15_ast_interpreter	ast_free	0	ptr struct Node	correct	correct	0.200	0.857	0	1	1
+O1	15_ast_interpreter	node_new	0	enum	correct				0	1	1
+O1	15_ast_interpreter	node_new	-1	ptr struct Node	correct	correct	0.200	0.857	0	1	1
+O1	15_ast_interpreter	lit_str	0	ptr i8	correct	wrong			0	1	1
+O1	15_ast_interpreter	lit_str	-1	ptr struct Node	correct	correct	0.200	0.857	0	1	1
+O1	15_ast_interpreter	assign	0	ptr i8	correct	wrong			0	2	2
+O1	15_ast_interpreter	assign	1	ptr struct Node	correct	correct	0.200	0.857	0	2	2
+O1	15_ast_interpreter	assign	-1	ptr struct Node	correct	correct	0.200	0.857	0	2	2
+O1	15_ast_interpreter	call1	0	ptr i8	correct	wrong			0	2	2
+O1	15_ast_interpreter	call1	1	ptr struct Node	correct	correct	0.200	0.857	0	2	2
+O1	15_ast_interpreter	call1	-1	ptr struct Node	correct	correct	0.200	0.857	0	2	2
+O1	15_ast_interpreter	var_ref	0	ptr i8	correct	wrong			0	1	1
+O1	15_ast_interpreter	var_ref	-1	ptr struct Node	correct	correct	0.200	0.857	0	1	1
+O1	15_ast_interpreter	value_print	0	ptr struct Value	correct	correct	0.500	0.667	0	1	1
+O1	15_ast_interpreter	mk_nil	-1	struct Value	unknown				0	0	1
+O1	15_ast_interpreter	env_slot	0	ptr struct Env	correct	correct	0.007	1.000	0	2	2
+O1	15_ast_interpreter	env_slot	1	ptr i8	correct	wrong			0	2	2
+O1	15_ast_interpreter	env_slot	-1	ptr struct Value	correct	correct	0.250	0.500	0	2	2
+O1	15_ast_interpreter	eval	0	ptr struct Node	correct	correct	0.067	0.667	0	2	3
+O1	15_ast_interpreter	eval	1	ptr struct Env	correct	correct	0.000	0.000	0	2	3
+O1	15_ast_interpreter	eval	-1	struct Value	unknown				0	2	3
+O1	15_ast_interpreter	main	-1	i32	unknown				0	0	0
+O1	16_hash_table	hash_key	0	ptr i8	correct	correct			0	2	2
+O1	16_hash_table	hash_key	1	u64	correct				0	2	2
+O1	16_hash_table	hash_key	-1	u32	correct				0	2	2
+O1	16_hash_table	ht_lookup	0	ptr struct HashTable	correct	correct	1.000	1.000	1	2	2
+O1	16_hash_table	ht_lookup	1	ptr i8	correct	correct			0	2	2
+O1	16_hash_table	ht_lookup	-1	ptr struct Entry	correct	correct	0.833	1.000	0	2	2
+O1	16_hash_table	ht_erase	0	ptr struct HashTable	correct	correct	1.000	1.000	1	2	2
+O1	16_hash_table	ht_erase	1	ptr i8	correct	correct			0	2	2
+O1	16_hash_table	ht_erase	-1	i32	unknown				0	2	2
+O1	16_hash_table	ht_stats	0	ptr struct HashTable	correct	correct	1.000	1.000	1	1	1
+O1	16_hash_table	main	-1	i32	unknown				0	0	0
+O1	17_graph	state_reset	0	ptr struct SearchState	correct	correct	0.016	0.333	0	2	2
+O1	17_graph	state_reset	1	u16	wrong				0	2	2
+O1	17_graph	graph_add_vertex	0	ptr struct Graph	correct	correct	0.002	1.000	0	6	4
+O1	17_graph	graph_add_vertex	1	ptr i8	correct	wrong			0	6	4
+O1	17_graph	graph_add_vertex	2	ptr i8	correct	wrong			0	6	4
+O1	17_graph	graph_add_vertex	3	f64	wrong				0	6	4
+O1	17_graph	graph_add_vertex	4	f64	unknown				0	6	4
+O1	17_graph	graph_add_vertex	5	u32	unknown				0	6	4
+O1	17_graph	graph_add_vertex	-1	u16	wrong				0	6	4
+O1	17_graph	graph_add_edge	0	ptr struct Graph	correct	correct	0.002	1.000	0	5	5
+O1	17_graph	graph_add_edge	1	u16	wrong				0	5	5
+O1	17_graph	graph_add_edge	2	u16	wrong				0	5	5
+O1	17_graph	graph_add_edge	3	u16	wrong				0	5	5
+O1	17_graph	graph_add_edge	4	u32	correct				0	5	5
+O1	17_graph	graph_add_bidir	0	ptr struct Graph	correct	correct	0.002	1.000	0	5	5
+O1	17_graph	graph_add_bidir	1	u16	wrong				0	5	5
+O1	17_graph	graph_add_bidir	2	u16	wrong				0	5	5
+O1	17_graph	graph_add_bidir	3	u16	wrong				0	5	5
+O1	17_graph	graph_add_bidir	4	u32	correct				0	5	5
+O1	17_graph	dfs_matrix	0	ptr struct Graph	correct	correct	0.002	1.000	0	4	4
+O1	17_graph	dfs_matrix	1	u16	wrong				0	4	4
+O1	17_graph	dfs_matrix	2	ptr struct SearchState	correct	correct	0.016	0.333	0	4	4
+O1	17_graph	dfs_matrix	3	i32	correct				0	4	4
+O1	17_graph	main	-1	i32	unknown				0	0	0
+O1	18_opaque_generic	arena_alloc	0	ptr struct Arena	correct	correct	1.000	1.000	1	3	3
+O1	18_opaque_generic	arena_alloc	1	u64	correct				0	3	3
+O1	18_opaque_generic	arena_alloc	2	u64	correct				0	3	3
+O1	18_opaque_generic	arena_alloc	-1	ptr void	correct	correct			0	3	3
+O1	18_opaque_generic	ring_new	0	u64	correct				0	2	2
+O1	18_opaque_generic	ring_new	1	u64	correct				0	2	2
+O1	18_opaque_generic	ring_new	-1	ptr struct RingBuffer	correct	correct	1.000	1.000	1	2	2
+O1	18_opaque_generic	ring_push	0	ptr struct RingBuffer	correct	correct	1.000	1.000	1	2	2
+O1	18_opaque_generic	ring_push	1	ptr void	correct	correct			0	2	2
+O1	18_opaque_generic	ring_pop	0	ptr struct RingBuffer	correct	correct	1.000	1.000	1	2	2
+O1	18_opaque_generic	ring_pop	1	ptr void	correct	correct			0	2	2
+O1	18_opaque_generic	ring_pop	-1	i32	unknown				0	2	2
+O1	18_opaque_generic	ring_foreach	0	ptr struct RingBuffer	correct	correct	1.000	1.000	1	3	3
+O1	18_opaque_generic	ring_foreach	1	ptr fn	correct	wrong			0	3	3
+O1	18_opaque_generic	ring_foreach	2	ptr void	correct	correct			0	3	3
+O1	18_opaque_generic	main	-1	i32	unknown				0	0	0
+O1	19_state_machine	act_syn	0	ptr struct Connection	correct	correct	0.060	1.000	0	2	1
+O1	19_state_machine	act_syn	1	enum	unknown				0	2	1
+O1	19_state_machine	act_data	0	ptr struct Connection	correct	correct	0.060	1.000	0	2	1
+O1	19_state_machine	act_data	1	enum	unknown				0	2	1
+O1	19_state_machine	act_retry	0	ptr struct Connection	correct	correct	0.015	1.000	0	2	1
+O1	19_state_machine	act_retry	1	enum	unknown				0	2	1
+O1	19_state_machine	act_listen	0	ptr struct Connection	correct	correct	0.030	0.500	0	2	1
+O1	19_state_machine	act_listen	1	enum	unknown				0	2	1
+O1	19_state_machine	act_establish	0	ptr struct Connection	correct	correct	0.060	0.667	0	2	1
+O1	19_state_machine	act_establish	1	enum	unknown				0	2	1
+O1	19_state_machine	act_close	0	ptr struct Connection	correct	correct	0.030	0.500	0	2	2
+O1	19_state_machine	act_close	1	enum	wrong				0	2	2
+O1	19_state_machine	act_reset	0	ptr struct Connection	correct	correct	0.030	0.250	0	2	2
+O1	19_state_machine	act_reset	1	enum	correct				0	2	2
+O1	19_state_machine	conn_feed	0	ptr struct Connection	correct	correct	0.179	1.000	0	2	2
+O1	19_state_machine	conn_feed	1	enum	correct				0	2	2
+O1	19_state_machine	conn_dump	0	ptr struct Connection	correct	correct	0.179	1.000	0	1	1
+O1	19_state_machine	main	-1	i32	unknown				0	0	0
+O1	20_combined_stress	container_place	0	ptr struct Container	correct	correct	0.290	0.750	0	2	2
+O1	20_combined_stress	container_place	1	ptr struct Item	correct	correct	0.360	0.857	0	2	2
+O1	20_combined_stress	container_value	0	ptr struct Container	correct	correct	0.290	0.750	0	1	1
+O1	20_combined_stress	container_value	-1	u32	correct				0	1	1
+O1	20_combined_stress	script_run	0	ptr struct Item	correct	correct	0.360	0.857	0	1	1
+O1	20_combined_stress	script_run	-1	i32	correct				0	1	1
+O1	20_combined_stress	index_insert	0	ptr struct IndexNode	correct	correct	1.000	1.000	1	3	3
+O1	20_combined_stress	index_insert	1	ptr struct Item	correct	correct	0.360	0.857	0	3	3
+O1	20_combined_stress	index_insert	2	u32	correct				0	3	3
+O1	20_combined_stress	index_insert	-1	ptr struct IndexNode	correct	correct	1.000	1.000	1	3	3
+O1	20_combined_stress	index_walk	0	ptr struct IndexNode	correct	correct	1.000	1.000	1	1	1
+O1	20_combined_stress	container_print	0	ptr struct Container	correct	correct	0.290	0.750	0	2	2
+O1	20_combined_stress	container_print	1	i32	correct				0	2	2
+O1	20_combined_stress	index_free	0	ptr struct IndexNode	correct	correct	1.000	1.000	1	1	1
+O1	20_combined_stress	container_free	0	ptr struct Container	correct	correct	0.290	0.750	0	1	1
+O1	20_combined_stress	item_new	0	ptr struct World	correct	correct	0.400	1.000	0	4	4
+O1	20_combined_stress	item_new	1	ptr i8	correct	wrong			0	4	4
+O1	20_combined_stress	item_new	2	enum	correct				0	4	4
+O1	20_combined_stress	item_new	3	i64	correct				0	4	4
+O1	20_combined_stress	item_new	-1	ptr struct Item	correct	correct	0.360	0.857	0	4	4
+O1	20_combined_stress	container_new	0	ptr i8	correct	wrong			0	4	4
+O1	20_combined_stress	container_new	1	u16	correct				0	4	4
+O1	20_combined_stress	container_new	2	u16	correct				0	4	4
+O1	20_combined_stress	container_new	3	u16	correct				0	4	4
+O1	20_combined_stress	container_new	-1	ptr struct Container	correct	correct	0.290	0.750	0	4	4
+O1	20_combined_stress	main	-1	i32	unknown				0	0	0
+O2	01_basic_struct	main	-1	i32	unknown				0	0	0
+O2	02_recursive_struct	main	-1	i32	unknown				0	0	0
+O2	02_recursive_struct	fs_collect	0	ptr struct FsNode	correct	correct	0.195	0.889	0	3	3
+O2	02_recursive_struct	fs_collect	1	u32	correct				0	3	3
+O2	02_recursive_struct	fs_collect	2	ptr struct FsStats	correct	correct	1.000	1.000	1	3	3
+O2	02_recursive_struct	fs_new	0	ptr i8	correct	wrong			0	3	3
+O2	02_recursive_struct	fs_new	1	enum	wrong				0	3	3
+O2	02_recursive_struct	fs_new	2	u64	correct				0	3	3
+O2	02_recursive_struct	fs_new	-1	ptr struct FsNode	correct	correct	0.195	0.889	0	3	3
+O2	02_recursive_struct	fs_path	0	ptr struct FsNode	correct	correct	0.195	0.889	0	3	2
+O2	02_recursive_struct	fs_path	1	ptr i8	correct	correct			0	3	2
+O2	02_recursive_struct	fs_path	2	u64	unknown				0	3	2
+O2	02_recursive_struct	fs_path	-1	i32	correct				0	3	2
+O2	02_recursive_struct	fs_recursive_size	0	ptr struct FsNode	correct	wrong	0.000		0	2	0
+O2	02_recursive_struct	fs_recursive_size	1	ptr struct FsNode	correct	correct	0.195	0.889	0	2	0
+O2	02_recursive_struct	fs_recursive_size	-1	u64	unknown				0	2	0
+O2	02_recursive_struct	fs_print	0	ptr struct FsNode	correct	correct	0.195	0.889	0	2	2
+O2	02_recursive_struct	fs_print	1	u32	correct				0	2	2
+O2	02_recursive_struct	fs_free	0	ptr struct FsNode	correct	correct	0.195	0.889	0	1	0
+O2	02_recursive_struct	fs_find	0	ptr struct FsNode	correct	correct	0.195	0.889	0	2	1
+O2	02_recursive_struct	fs_find	1	ptr i8	unknown	wrong			0	2	1
+O2	02_recursive_struct	fs_find	-1	ptr struct FsNode	correct	correct	0.195	0.889	0	2	1
+O2	03_flexible_array	main	-1	i32	unknown				0	0	0
+O2	03_flexible_array	crc32_lite	0	ptr u8	correct	correct			0	2	2
+O2	03_flexible_array	crc32_lite	1	u64	correct				0	2	2
+O2	03_flexible_array	crc32_lite	-1	u32	correct				0	2	2
+O2	03_flexible_array	matrix_new	0	u32	correct				0	2	2
+O2	03_flexible_array	matrix_new	1	u32	correct				0	2	2
+O2	03_flexible_array	matrix_new	-1	ptr struct Matrix	correct	correct	1.000	1.000	1	2	2
+O2	04_tagged_union	main	-1	i32	unknown				0	0	0
+O2	04_tagged_union	msg_checksum	0	ptr struct Message	correct	correct	0.069	1.000	0	1	1
+O2	04_tagged_union	msg_checksum	-1	u32	correct				0	1	1
+O2	04_tagged_union	msg_init	0	ptr struct Message	correct	correct	0.023	0.667	0	2	2
+O2	04_tagged_union	msg_init	1	enum	wrong				0	2	2
+O2	05_anon_union	main	-1	i32	unknown				0	0	0
+O2	05_anon_union	reg_show	0	union Reg32	wrong				0	2	1
+O2	05_anon_union	reg_show	1	ptr i8	unknown	wrong			0	2	1
+O2	06_multidim_array	main	-1	i32	unknown				0	0	0
+O2	07_singly_linked_list	main	-1	i32	unknown				0	0	0
+O2	07_singly_linked_list	list_push_back	0	ptr struct EmployeeList	correct	wrong	1.000	1.000	1	2	2
+O2	07_singly_linked_list	list_push_back	1	ptr struct ListNode	correct	correct	0.111	1.000	0	2	2
+O2	07_singly_linked_list	merge_sort	0	ptr struct ListNode	correct	correct	0.111	1.000	0	1	1
+O2	07_singly_linked_list	merge_sort	-1	ptr struct ListNode	correct	correct	0.111	1.000	0	1	1
+O2	07_singly_linked_list	node_new	0	u32	wrong				0	5	5
+O2	07_singly_linked_list	node_new	1	ptr i8	correct	wrong			0	5	5
+O2	07_singly_linked_list	node_new	2	ptr i8	correct	wrong			0	5	5
+O2	07_singly_linked_list	node_new	3	u32	correct				0	5	5
+O2	07_singly_linked_list	node_new	4	u16	correct				0	5	5
+O2	07_singly_linked_list	node_new	-1	ptr struct ListNode	correct	correct	0.111	1.000	0	5	5
+O2	07_singly_linked_list	list_dump	0	ptr struct EmployeeList	correct	wrong	1.000	1.000	1	2	1
+O2	07_singly_linked_list	list_dump	1	ptr i8	unknown	wrong			0	2	1
+O2	08_doubly_linked_list	main	-1	i32	unknown				0	0	0
+O2	08_doubly_linked_list	lru_lookup	0	ptr struct LruCache	correct	correct	0.212	1.000	0	2	2
+O2	08_doubly_linked_list	lru_lookup	1	u32	correct				0	2	2
+O2	08_doubly_linked_list	lru_lookup	-1	ptr struct DNode	correct	correct	0.143	0.571	0	2	2
+O2	08_doubly_linked_list	lru_dump	0	ptr struct LruCache	correct	correct	0.212	1.000	0	2	1
+O2	08_doubly_linked_list	lru_dump	1	ptr i8	unknown	wrong			0	2	1
+O2	09_binary_tree	main	-1	i32	unknown				0	0	0
+O2	09_binary_tree	bst_inorder_recursive	0	ptr struct BstNode	correct	correct	0.200	1.000	0	2	2
+O2	09_binary_tree	bst_inorder_recursive	1	i32	correct				0	2	2
+O2	09_binary_tree	bst_levelorder	0	ptr struct Bst	correct	correct	0.000	0.000	0	2	1
+O2	09_binary_tree	bst_levelorder	1	ptr struct Bst	unknown	wrong	0.000		0	2	1
+O2	09_binary_tree	bst_inorder_iterative	0	ptr struct Bst	correct	correct	0.000	0.000	0	2	1
+O2	09_binary_tree	bst_inorder_iterative	1	ptr struct Bst	unknown	wrong	0.000		0	2	1
+O2	09_binary_tree	bst_free	0	ptr struct BstNode	correct	correct	0.200	1.000	0	1	1
+O2	09_binary_tree	bst_height	0	ptr struct BstNode	correct	correct	0.200	1.000	0	1	1
+O2	09_binary_tree	bst_height	-1	i32	correct				0	1	1
+O2	10_avl_tree	main	-1	i32	unknown				0	0	0
+O2	10_avl_tree	avl_print	0	ptr struct AvlNode	correct	correct	0.129	0.571	0	2	2
+O2	10_avl_tree	avl_print	1	i32	correct				0	2	2
+O2	10_avl_tree	avl_check	0	ptr struct AvlNode	correct	correct	0.129	0.571	0	1	1
+O2	10_avl_tree	avl_check	-1	i32	unknown				0	1	1
+O2	10_avl_tree	avl_free	0	ptr struct AvlNode	correct	correct	0.065	1.000	0	1	1
+O2	10_avl_tree	avl_insert_rec	0	ptr struct AvlTree	correct	correct	0.167	1.000	0	4	3
+O2	10_avl_tree	avl_insert_rec	1	ptr struct AvlNode	correct	correct	0.129	0.571	0	4	3
+O2	10_avl_tree	avl_insert_rec	2	u32	correct				0	4	3
+O2	10_avl_tree	avl_insert_rec	3	ptr struct City	unknown	wrong	0.000		0	4	3
+O2	10_avl_tree	avl_insert_rec	-1	ptr struct AvlNode	correct	correct	0.129	0.571	0	4	3
+O2	10_avl_tree	avl_erase_rec	0	ptr struct AvlTree	correct	correct	0.167	1.000	0	3	3
+O2	10_avl_tree	avl_erase_rec	1	ptr struct AvlNode	correct	correct	0.129	0.571	0	3	3
+O2	10_avl_tree	avl_erase_rec	2	u32	correct				0	3	3
+O2	10_avl_tree	avl_erase_rec	-1	ptr struct AvlNode	correct	correct	0.129	0.571	0	3	3
+O2	11_intrusive_list	main	-1	i32	unknown				0	0	0
+O2	11_intrusive_list	task_create	0	ptr struct Scheduler	correct	wrong	0.300	0.750	0	4	4
+O2	11_intrusive_list	task_create	1	u32	correct				0	4	4
+O2	11_intrusive_list	task_create	2	ptr i8	correct	wrong			0	4	4
+O2	11_intrusive_list	task_create	3	u32	correct				0	4	4
+O2	11_intrusive_list	task_create	-1	ptr struct Task	correct	wrong	0.042	0.250	0	4	4
+O2	12_bitfields_packed	main	-1	i32	unknown				0	0	0
+O2	12_bitfields_packed	pte_dump	0	ptr struct PageEntry	correct	correct	1.000	0.500	0	2	1
+O2	12_bitfields_packed	pte_dump	1	ptr i8	unknown	wrong			0	2	1
+O2	13_vtable_objects	main	-1	i32	unknown				0	0	0
+O2	13_vtable_objects	circle_area	0	ptr struct Shape	correct	wrong	0.000		0	1	1
+O2	13_vtable_objects	circle_perim	0	ptr struct Shape	correct	wrong	0.000		0	1	1
+O2	13_vtable_objects	circle_scale	0	ptr struct Shape	correct	correct	0.000	0.000	0	2	1
+O2	13_vtable_objects	circle_scale	1	f64	unknown				0	2	1
+O2	13_vtable_objects	rect_area	0	ptr struct Shape	correct	wrong	0.000		0	1	1
+O2	13_vtable_objects	rect_perim	0	ptr struct Shape	correct	wrong	0.000		0	1	1
+O2	13_vtable_objects	rect_scale	0	ptr struct Shape	correct	correct	0.000	0.000	0	2	1
+O2	13_vtable_objects	rect_scale	1	f64	unknown				0	2	1
+O2	13_vtable_objects	poly_area	0	ptr struct Shape	correct	correct	0.000	0.000	0	1	1
+O2	13_vtable_objects	poly_area	-1	f64	unknown				0	1	1
+O2	13_vtable_objects	poly_perim	0	ptr struct Shape	correct	correct	0.000	0.000	0	1	1
+O2	13_vtable_objects	poly_perim	-1	f64	unknown				0	1	1
+O2	13_vtable_objects	poly_scale	0	ptr struct Shape	correct	correct	0.000	0.000	0	2	1
+O2	13_vtable_objects	poly_scale	1	f64	unknown				0	2	1
+O2	13_vtable_objects	rrect_area	0	ptr struct Shape	correct	wrong	0.000		0	1	1
+O2	13_vtable_objects	generic_destroy	0	ptr struct Shape	correct	wrong	0.000		0	1	1
+O2	13_vtable_objects	circle_describe	0	ptr struct Shape	correct	wrong	0.000		0	3	3
+O2	13_vtable_objects	circle_describe	1	ptr i8	correct	wrong			0	3	3
+O2	13_vtable_objects	circle_describe	2	u64	correct				0	3	3
+O2	13_vtable_objects	rect_describe	0	ptr struct Shape	correct	wrong	0.000		0	3	3
+O2	13_vtable_objects	rect_describe	1	ptr i8	correct	wrong			0	3	3
+O2	13_vtable_objects	rect_describe	2	u64	correct				0	3	3
+O2	13_vtable_objects	poly_describe	0	ptr struct Shape	correct	correct	0.000	0.000	0	3	3
+O2	13_vtable_objects	poly_describe	1	ptr i8	correct	wrong			0	3	3
+O2	13_vtable_objects	poly_describe	2	u64	correct				0	3	3
+O2	13_vtable_objects	rrect_describe	0	ptr struct Shape	correct	wrong	0.000		0	3	3
+O2	13_vtable_objects	rrect_describe	1	ptr i8	correct	wrong			0	3	3
+O2	13_vtable_objects	rrect_describe	2	u64	correct				0	3	3
+O2	13_vtable_objects	shape_init	0	ptr struct Shape	correct	correct	0.071	0.200	0	3	3
+O2	13_vtable_objects	shape_init	1	ptr struct ShapeVTable	correct	wrong	0.000		0	3	3
+O2	13_vtable_objects	shape_init	2	ptr i8	correct	wrong			0	3	3
+O2	13_vtable_objects	shape_init	-1	ptr struct Shape	correct	correct	0.071	0.200	0	3	3
+O2	13_vtable_objects	make_poly	0	ptr f64	correct	wrong			0	3	3
+O2	13_vtable_objects	make_poly	1	u32	correct				0	3	3
+O2	13_vtable_objects	make_poly	2	ptr i8	correct	wrong			0	3	3
+O2	13_vtable_objects	report	0	ptr ptr struct Shape	correct	wrong			0	2	1
+O2	13_vtable_objects	report	1	u64	unknown				0	2	1
+O2	14_array_of_structs	main	-1	i32	unknown				0	0	0
+O2	14_array_of_structs	stats_dump	0	ptr struct SystemStats	correct	correct	0.081	1.000	0	2	1
+O2	14_array_of_structs	stats_dump	1	ptr i8	unknown	wrong			0	2	1
+O2	14_array_of_structs	aos_dump	0	ptr struct Particle	correct	correct	0.917	0.524	0	3	1
+O2	14_array_of_structs	aos_dump	1	ptr i8	unknown	wrong			0	3	1
+O2	14_array_of_structs	aos_dump	2	u64	unknown				0	3	1
+O2	15_ast_interpreter	main	-1	i32	unknown				0	0	0
+O2	15_ast_interpreter	ast_count	0	ptr struct Node	correct	correct	0.300	1.000	0	1	1
+O2	15_ast_interpreter	ast_count	-1	u32	correct				0	1	1
+O2	15_ast_interpreter	ast_free	0	ptr struct Node	correct	correct	0.300	1.000	0	1	1
+O2	15_ast_interpreter	node_new	0	enum	correct				0	1	1
+O2	15_ast_interpreter	node_new	-1	ptr struct Node	correct	correct	0.300	1.000	0	1	1
+O2	15_ast_interpreter	lit_str	0	ptr i8	correct	wrong			0	1	1
+O2	15_ast_interpreter	lit_str	-1	ptr struct Node	correct	correct	0.300	1.000	0	1	1
+O2	15_ast_interpreter	assign	0	ptr i8	correct	wrong			0	2	2
+O2	15_ast_interpreter	assign	1	ptr struct Node	correct	correct	0.300	1.000	0	2	2
+O2	15_ast_interpreter	assign	-1	ptr struct Node	correct	correct	0.300	1.000	0	2	2
+O2	15_ast_interpreter	call1	0	ptr i8	correct	wrong			0	2	2
+O2	15_ast_interpreter	call1	1	ptr struct Node	correct	correct	0.300	1.000	0	2	2
+O2	15_ast_interpreter	call1	-1	ptr struct Node	correct	correct	0.300	1.000	0	2	2
+O2	15_ast_interpreter	var_ref	0	ptr i8	correct	wrong			0	1	1
+O2	15_ast_interpreter	var_ref	-1	ptr struct Node	correct	correct	0.300	1.000	0	1	1
+O2	15_ast_interpreter	value_print	0	ptr struct Value	correct	correct	0.500	0.500	0	1	1
+O2	15_ast_interpreter	env_slot	0	ptr struct Env	correct	correct	0.007	1.000	0	2	2
+O2	15_ast_interpreter	env_slot	1	ptr i8	correct	wrong			0	2	2
+O2	15_ast_interpreter	env_slot	-1	ptr struct Value	correct	correct	0.250	0.500	0	2	2
+O2	15_ast_interpreter	eval	0	ptr struct Node	correct	correct	0.067	0.500	0	2	3
+O2	15_ast_interpreter	eval	1	ptr struct Env	correct	correct	0.000	0.000	0	2	3
+O2	15_ast_interpreter	eval	-1	struct Value	unknown				0	2	3
+O2	16_hash_table	main	-1	i32	unknown				0	0	0
+O2	16_hash_table	ht_lookup	0	ptr struct HashTable	correct	correct	1.000	1.000	1	2	2
+O2	16_hash_table	ht_lookup	1	ptr i8	correct	correct			0	2	2
+O2	16_hash_table	ht_lookup	-1	ptr struct Entry	correct	correct	0.833	1.000	0	2	2
+O2	16_hash_table	ht_erase	0	ptr struct HashTable	correct	correct	1.000	1.000	1	2	2
+O2	16_hash_table	ht_erase	1	ptr i8	correct	correct			0	2	2
+O2	16_hash_table	ht_erase	-1	i32	unknown				0	2	2
+O2	16_hash_table	ht_stats	0	ptr struct HashTable	correct	correct	1.000	1.000	1	1	1
+O2	17_graph	main	-1	i32	unknown				0	0	0
+O2	17_graph	state_reset	0	ptr struct SearchState	correct	correct	0.016	0.500	0	2	2
+O2	17_graph	state_reset	1	u16	wrong				0	2	2
+O2	17_graph	dfs_matrix	0	u16	wrong				0	4	3
+O2	17_graph	dfs_matrix	1	ptr struct SearchState	correct	correct	0.016	0.500	0	4	3
+O2	17_graph	dfs_matrix	2	i32	correct				0	4	3
+O2	17_graph	dfs_matrix	3	ptr struct Graph	unknown	wrong	0.000		0	4	3
+O2	17_graph	graph_add_edge	0	u16	wrong				0	5	4
+O2	17_graph	graph_add_edge	1	u16	wrong				0	5	4
+O2	17_graph	graph_add_edge	2	u16	wrong				0	5	4
+O2	17_graph	graph_add_edge	3	u32	correct				0	5	4
+O2	17_graph	graph_add_edge	4	ptr struct Graph	unknown	wrong	0.000		0	5	4
+O2	17_graph	graph_add_bidir	0	u16	wrong				0	5	4
+O2	17_graph	graph_add_bidir	1	u16	wrong				0	5	4
+O2	17_graph	graph_add_bidir	2	u16	wrong				0	5	4
+O2	17_graph	graph_add_bidir	3	u32	correct				0	5	4
+O2	17_graph	graph_add_bidir	4	ptr struct Graph	wrong	wrong	0.000		0	5	4
+O2	17_graph	graph_add_vertex	0	ptr i8	correct	wrong			0	6	3
+O2	17_graph	graph_add_vertex	1	ptr i8	correct	wrong			0	6	3
+O2	17_graph	graph_add_vertex	2	f64	wrong				0	6	3
+O2	17_graph	graph_add_vertex	3	f64	unknown				0	6	3
+O2	17_graph	graph_add_vertex	4	u32	unknown				0	6	3
+O2	17_graph	graph_add_vertex	5	ptr struct Graph	unknown	wrong	0.000		0	6	3
+O2	17_graph	graph_add_vertex	-1	u16	wrong				0	6	3
+O2	18_opaque_generic	main	-1	i32	unknown				0	0	0
+O2	18_opaque_generic	ring_foreach	0	ptr struct RingBuffer	correct	correct	1.000	1.000	1	3	3
+O2	18_opaque_generic	ring_foreach	1	ptr fn	correct	wrong			0	3	3
+O2	18_opaque_generic	ring_foreach	2	ptr void	correct	correct			0	3	3
+O2	18_opaque_generic	arena_alloc	0	ptr struct Arena	correct	correct	1.000	1.000	1	3	3
+O2	18_opaque_generic	arena_alloc	1	u64	correct				0	3	3
+O2	18_opaque_generic	arena_alloc	2	u64	correct				0	3	3
+O2	18_opaque_generic	arena_alloc	-1	ptr void	correct	correct			0	3	3
+O2	18_opaque_generic	ring_new	0	u64	correct				0	2	2
+O2	18_opaque_generic	ring_new	1	u64	correct				0	2	2
+O2	18_opaque_generic	ring_new	-1	ptr struct RingBuffer	correct	correct	1.000	1.000	1	2	2
+O2	18_opaque_generic	ring_push	0	ptr struct RingBuffer	correct	correct	1.000	1.000	1	2	2
+O2	18_opaque_generic	ring_push	1	ptr void	correct	correct			0	2	2
+O2	19_state_machine	main	-1	i32	unknown				0	0	0
+O2	19_state_machine	act_syn	0	ptr struct Connection	correct	correct	0.060	1.000	0	2	1
+O2	19_state_machine	act_syn	1	enum	unknown				0	2	1
+O2	19_state_machine	act_data	0	ptr struct Connection	correct	correct	0.060	1.000	0	2	1
+O2	19_state_machine	act_data	1	enum	unknown				0	2	1
+O2	19_state_machine	act_retry	0	ptr struct Connection	correct	correct	0.015	1.000	0	2	1
+O2	19_state_machine	act_retry	1	enum	unknown				0	2	1
+O2	19_state_machine	act_listen	0	ptr struct Connection	correct	correct	0.015	0.333	0	2	1
+O2	19_state_machine	act_listen	1	enum	unknown				0	2	1
+O2	19_state_machine	act_establish	0	ptr struct Connection	correct	correct	0.030	0.500	0	2	1
+O2	19_state_machine	act_establish	1	enum	unknown				0	2	1
+O2	19_state_machine	act_close	0	ptr struct Connection	correct	correct	0.015	0.500	0	2	2
+O2	19_state_machine	act_close	1	enum	correct				0	2	2
+O2	19_state_machine	act_reset	0	ptr struct Connection	correct	correct	0.030	0.286	0	2	2
+O2	19_state_machine	act_reset	1	enum	correct				0	2	2
+O2	19_state_machine	conn_feed	0	ptr struct Connection	correct	correct	0.179	1.000	0	2	2
+O2	19_state_machine	conn_feed	1	enum	correct				0	2	2
+O2	19_state_machine	conn_dump	0	ptr struct Connection	correct	correct	0.179	1.000	0	1	1
+O2	20_combined_stress	main	-1	i32	unknown				0	0	0
+O2	20_combined_stress	container_place	0	ptr struct Container	correct	correct	0.290	0.818	0	2	2
+O2	20_combined_stress	container_place	1	ptr struct Item	correct	correct	0.280	0.824	0	2	2
+O2	20_combined_stress	container_value	0	ptr struct Container	correct	correct	0.290	0.818	0	1	1
+O2	20_combined_stress	container_value	-1	u32	correct				0	1	1
+O2	20_combined_stress	script_run	0	ptr struct Item	correct	correct	0.280	0.824	0	1	1
+O2	20_combined_stress	script_run	-1	i32	correct				0	1	1
+O2	20_combined_stress	index_insert	0	ptr struct IndexNode	correct	correct	1.000	1.000	1	3	3
+O2	20_combined_stress	index_insert	1	ptr struct Item	correct	correct	0.060	1.000	0	3	3
+O2	20_combined_stress	index_insert	2	u32	correct				0	3	3
+O2	20_combined_stress	index_insert	-1	ptr struct IndexNode	correct	correct	1.000	1.000	1	3	3
+O2	20_combined_stress	container_new	0	ptr i8	correct	wrong			0	4	4
+O2	20_combined_stress	container_new	1	u16	correct				0	4	4
+O2	20_combined_stress	container_new	2	u16	correct				0	4	4
+O2	20_combined_stress	container_new	3	u16	correct				0	4	4
+O2	20_combined_stress	container_new	-1	ptr struct Container	correct	correct	0.290	0.818	0	4	4
+O2	20_combined_stress	item_new	0	ptr struct World	correct	correct	0.400	0.667	0	4	4
+O2	20_combined_stress	item_new	1	ptr i8	correct	wrong			0	4	4
+O2	20_combined_stress	item_new	2	enum	correct				0	4	4
+O2	20_combined_stress	item_new	3	i64	correct				0	4	4
+O2	20_combined_stress	item_new	-1	ptr struct Item	correct	correct	0.280	0.824	0	4	4
+O2	20_combined_stress	index_walk	0	ptr struct IndexNode	correct	correct	1.000	1.000	1	1	1
+O2	20_combined_stress	container_print	0	ptr struct Container	correct	correct	0.290	0.818	0	2	2
+O2	20_combined_stress	container_print	1	i32	correct				0	2	2
+O2	20_combined_stress	container_free	0	ptr struct Container	correct	correct	0.290	0.818	0	1	1
+O2	20_combined_stress	index_free	0	ptr struct IndexNode	correct	correct	1.000	1.000	1	1	1
+O3	01_basic_struct	main	-1	i32	unknown				0	0	0
+O3	02_recursive_struct	main	-1	i32	unknown				0	0	0
+O3	02_recursive_struct	fs_new	0	ptr i8	correct	wrong			0	3	3
+O3	02_recursive_struct	fs_new	1	enum	wrong				0	3	3
+O3	02_recursive_struct	fs_new	2	u64	correct				0	3	3
+O3	02_recursive_struct	fs_new	-1	ptr struct FsNode	correct	correct	0.195	0.889	0	3	3
+O3	02_recursive_struct	fs_new	0	ptr i8	correct	wrong			0	3	2
+O3	02_recursive_struct	fs_new	1	u64	correct				0	3	2
+O3	02_recursive_struct	fs_new	2	enum	unknown				0	3	2
+O3	02_recursive_struct	fs_new	-1	ptr struct FsNode	correct	correct	0.195	0.889	0	3	2
+O3	02_recursive_struct	fs_recursive_size	0	ptr struct FsNode	correct	wrong	0.000		0	2	0
+O3	02_recursive_struct	fs_recursive_size	1	ptr struct FsNode	correct	correct	0.195	0.889	0	2	0
+O3	02_recursive_struct	fs_recursive_size	-1	u64	unknown				0	2	0
+O3	02_recursive_struct	fs_print	0	ptr struct FsNode	correct	correct	0.195	0.889	0	2	2
+O3	02_recursive_struct	fs_print	1	u32	correct				0	2	2
+O3	02_recursive_struct	fs_free	0	ptr struct FsNode	correct	correct	0.195	0.889	0	1	0
+O3	02_recursive_struct	fs_find	0	ptr struct FsNode	correct	correct	0.195	0.889	0	2	1
+O3	02_recursive_struct	fs_find	1	ptr i8	unknown	wrong			0	2	1
+O3	02_recursive_struct	fs_find	-1	ptr struct FsNode	correct	correct	0.195	0.889	0	2	1
+O3	02_recursive_struct	fs_collect	0	ptr struct FsNode	correct	correct	0.195	0.889	0	3	3
+O3	02_recursive_struct	fs_collect	1	u32	correct				0	3	3
+O3	02_recursive_struct	fs_collect	2	ptr struct FsStats	correct	correct	1.000	1.000	1	3	3
+O3	02_recursive_struct	fs_path	0	ptr struct FsNode	correct	correct	0.195	0.889	0	3	2
+O3	02_recursive_struct	fs_path	1	ptr i8	correct	correct			0	3	2
+O3	02_recursive_struct	fs_path	2	u64	unknown				0	3	2
+O3	02_recursive_struct	fs_path	-1	i32	correct				0	3	2
+O3	03_flexible_array	main	-1	i32	unknown				0	0	0
+O3	03_flexible_array	matrix_new	0	u32	wrong				0	2	2
+O3	03_flexible_array	matrix_new	1	u32	wrong				0	2	2
+O3	03_flexible_array	matrix_new	-1	ptr struct Matrix	correct	correct	0.500	0.500	0	2	2
+O3	04_tagged_union	main	-1	i32	unknown				0	0	0
+O3	04_tagged_union	msg_checksum	0	ptr struct Message	correct	correct	0.241	1.000	0	1	1
+O3	04_tagged_union	msg_checksum	-1	u32	correct				0	1	1
+O3	04_tagged_union	msg_init	0	ptr struct Message	correct	correct	0.011	0.500	0	2	2
+O3	04_tagged_union	msg_init	1	enum	wrong				0	2	2
+O3	05_anon_union	main	-1	i32	unknown				0	0	0
+O3	06_multidim_array	main	-1	i32	unknown				0	0	0
+O3	07_singly_linked_list	main	-1	i32	unknown				0	0	0
+O3	07_singly_linked_list	merge_sort	0	ptr struct ListNode	correct	correct	0.111	1.000	0	1	1
+O3	07_singly_linked_list	merge_sort	-1	ptr struct ListNode	correct	correct	0.111	1.000	0	1	1
+O3	07_singly_linked_list	node_new	0	u32	wrong				0	5	5
+O3	07_singly_linked_list	node_new	1	ptr i8	correct	wrong			0	5	5
+O3	07_singly_linked_list	node_new	2	ptr i8	correct	wrong			0	5	5
+O3	07_singly_linked_list	node_new	3	u32	correct				0	5	5
+O3	07_singly_linked_list	node_new	4	u16	correct				0	5	5
+O3	07_singly_linked_list	node_new	-1	ptr struct ListNode	correct	correct	0.111	1.000	0	5	5
+O3	07_singly_linked_list	list_dump	0	ptr struct EmployeeList	correct	wrong	1.000	1.000	1	2	1
+O3	07_singly_linked_list	list_dump	1	ptr i8	unknown	wrong			0	2	1
+O3	08_doubly_linked_list	main	-1	i32	unknown				0	0	0
+O3	08_doubly_linked_list	lru_lookup	0	ptr struct LruCache	correct	correct	0.182	0.857	0	2	2
+O3	08_doubly_linked_list	lru_lookup	1	u32	correct				0	2	2
+O3	08_doubly_linked_list	lru_lookup	-1	ptr struct DNode	correct	correct	0.107	0.429	0	2	2
+O3	08_doubly_linked_list	lru_dump	0	ptr struct LruCache	correct	correct	0.182	0.857	0	2	1
+O3	08_doubly_linked_list	lru_dump	1	ptr i8	unknown	wrong			0	2	1
+O3	09_binary_tree	main	-1	i32	unknown				0	0	0
+O3	09_binary_tree	bst_levelorder	0	ptr struct Bst	correct	correct	0.000	0.000	0	2	1
+O3	09_binary_tree	bst_levelorder	1	ptr struct Bst	unknown	wrong	0.000		0	2	1
+O3	09_binary_tree	bst_inorder_iterative	0	ptr struct Bst	correct	correct	0.000	0.000	0	2	1
+O3	09_binary_tree	bst_inorder_iterative	1	ptr struct Bst	unknown	wrong	0.000		0	2	1
+O3	09_binary_tree	bst_free	0	ptr struct BstNode	correct	correct	0.200	1.000	0	1	1
+O3	09_binary_tree	bst_height	0	ptr struct BstNode	correct	correct	0.200	1.000	0	1	1
+O3	09_binary_tree	bst_height	-1	i32	correct				0	1	1
+O3	09_binary_tree	bst_inorder_recursive	0	ptr struct BstNode	correct	correct	0.200	1.000	0	2	2
+O3	09_binary_tree	bst_inorder_recursive	1	i32	correct				0	2	2
+O3	10_avl_tree	main	-1	i32	unknown				0	0	0
+O3	10_avl_tree	avl_free	0	ptr struct AvlNode	correct	correct	0.129	0.571	0	1	1
+O3	10_avl_tree	rebalance	0	ptr struct AvlTree	correct	correct	0.833	0.833	0	2	2
+O3	10_avl_tree	rebalance	1	ptr struct AvlNode	correct	correct	0.129	0.571	0	2	2
+O3	10_avl_tree	rebalance	-1	ptr struct AvlNode	correct	correct	0.129	0.571	0	2	2
+O3	10_avl_tree	avl_erase_rec	0	ptr struct AvlTree	correct	correct	0.833	0.833	0	3	3
+O3	10_avl_tree	avl_erase_rec	1	ptr struct AvlNode	correct	correct	0.129	0.571	0	3	3
+O3	10_avl_tree	avl_erase_rec	2	u32	wrong				0	3	3
+O3	10_avl_tree	avl_erase_rec	-1	ptr struct AvlNode	correct	correct	0.129	0.571	0	3	3
+O3	10_avl_tree	avl_insert_rec	0	ptr struct AvlTree	correct	correct	0.833	0.833	0	4	3
+O3	10_avl_tree	avl_insert_rec	1	ptr struct AvlNode	correct	correct	0.129	0.571	0	4	3
+O3	10_avl_tree	avl_insert_rec	2	u32	wrong				0	4	3
+O3	10_avl_tree	avl_insert_rec	3	ptr struct City	correct	correct	0.000	0.000	0	4	3
+O3	10_avl_tree	avl_insert_rec	-1	ptr struct AvlNode	correct	correct	0.129	0.571	0	4	3
+O3	10_avl_tree	avl_print	0	ptr struct AvlNode	correct	correct	0.129	0.571	0	2	2
+O3	10_avl_tree	avl_print	1	i32	correct				0	2	2
+O3	10_avl_tree	avl_check	0	ptr struct AvlNode	correct	correct	0.129	0.571	0	1	1
+O3	10_avl_tree	avl_check	-1	i32	wrong				0	1	1
+O3	11_intrusive_list	main	-1	i32	unknown				0	0	0
+O3	11_intrusive_list	task_create	0	ptr struct Scheduler	correct	wrong	0.200	0.500	0	4	4
+O3	11_intrusive_list	task_create	1	u32	correct				0	4	4
+O3	11_intrusive_list	task_create	2	ptr i8	correct	wrong			0	4	4
+O3	11_intrusive_list	task_create	3	u32	correct				0	4	4
+O3	11_intrusive_list	task_create	-1	ptr struct Task	correct	wrong	0.042	0.250	0	4	4
+O3	12_bitfields_packed	main	-1	i32	unknown				0	0	0
+O3	12_bitfields_packed	pte_dump	0	ptr struct PageEntry	correct	correct	1.000	0.500	0	2	1
+O3	12_bitfields_packed	pte_dump	1	ptr i8	unknown	wrong			0	2	1
+O3	13_vtable_objects	main	-1	i32	unknown				0	0	0
+O3	13_vtable_objects	circle_area	0	ptr struct Shape	correct	wrong	0.000		0	1	1
+O3	13_vtable_objects	circle_perim	0	ptr struct Shape	correct	wrong	0.000		0	1	1
+O3	13_vtable_objects	circle_scale	0	ptr struct Shape	correct	correct	0.000	0.000	0	2	1
+O3	13_vtable_objects	circle_scale	1	f64	unknown				0	2	1
+O3	13_vtable_objects	rect_area	0	ptr struct Shape	correct	wrong	0.000		0	1	1
+O3	13_vtable_objects	rect_perim	0	ptr struct Shape	correct	wrong	0.000		0	1	1
+O3	13_vtable_objects	rect_scale	0	ptr struct Shape	correct	correct	0.000	0.000	0	2	1
+O3	13_vtable_objects	rect_scale	1	f64	unknown				0	2	1
+O3	13_vtable_objects	poly_area	0	ptr struct Shape	correct	correct	0.000	0.000	0	1	1
+O3	13_vtable_objects	poly_area	-1	f64	unknown				0	1	1
+O3	13_vtable_objects	poly_perim	0	ptr struct Shape	correct	correct	0.000	0.000	0	1	1
+O3	13_vtable_objects	poly_perim	-1	f64	unknown				0	1	1
+O3	13_vtable_objects	poly_scale	0	ptr struct Shape	correct	correct	0.000	0.000	0	2	1
+O3	13_vtable_objects	poly_scale	1	f64	unknown				0	2	1
+O3	13_vtable_objects	rrect_area	0	ptr struct Shape	correct	wrong	0.000		0	1	1
+O3	13_vtable_objects	generic_destroy	0	ptr struct Shape	correct	wrong	0.000		0	1	1
+O3	13_vtable_objects	circle_describe	0	ptr struct Shape	correct	wrong	0.000		0	3	3
+O3	13_vtable_objects	circle_describe	1	ptr i8	correct	wrong			0	3	3
+O3	13_vtable_objects	circle_describe	2	u64	correct				0	3	3
+O3	13_vtable_objects	rect_describe	0	ptr struct Shape	correct	wrong	0.000		0	3	3
+O3	13_vtable_objects	rect_describe	1	ptr i8	correct	wrong			0	3	3
+O3	13_vtable_objects	rect_describe	2	u64	correct				0	3	3
+O3	13_vtable_objects	poly_describe	0	ptr struct Shape	correct	correct	0.000	0.000	0	3	3
+O3	13_vtable_objects	poly_describe	1	ptr i8	correct	wrong			0	3	3
+O3	13_vtable_objects	poly_describe	2	u64	correct				0	3	3
+O3	13_vtable_objects	rrect_describe	0	ptr struct Shape	correct	wrong	0.000		0	3	3
+O3	13_vtable_objects	rrect_describe	1	ptr i8	correct	wrong			0	3	3
+O3	13_vtable_objects	rrect_describe	2	u64	correct				0	3	3
+O3	13_vtable_objects	shape_init	0	ptr struct Shape	correct	correct	0.143	0.222	0	3	3
+O3	13_vtable_objects	shape_init	1	ptr struct ShapeVTable	correct	wrong	0.000		0	3	3
+O3	13_vtable_objects	shape_init	2	ptr i8	correct	wrong			0	3	3
+O3	13_vtable_objects	shape_init	-1	ptr struct Shape	correct	correct	0.143	0.222	0	3	3
+O3	13_vtable_objects	make_poly	0	ptr f64	correct	correct			0	3	3
+O3	13_vtable_objects	make_poly	1	u32	wrong				0	3	3
+O3	13_vtable_objects	make_poly	2	ptr i8	correct	wrong			0	3	3
+O3	13_vtable_objects	report	0	ptr ptr struct Shape	correct	wrong			0	2	1
+O3	13_vtable_objects	report	1	u64	unknown				0	2	1
+O3	14_array_of_structs	main	-1	i32	unknown				0	0	0
+O3	14_array_of_structs	stats_dump	0	ptr struct SystemStats	correct	correct	0.081	1.000	0	2	1
+O3	14_array_of_structs	stats_dump	1	ptr i8	unknown	wrong			0	2	1
+O3	14_array_of_structs	aos_dump	0	ptr struct Particle	correct	correct	0.333	0.571	0	3	1
+O3	14_array_of_structs	aos_dump	1	ptr i8	unknown	wrong			0	3	1
+O3	14_array_of_structs	aos_dump	2	u64	unknown				0	3	1
+O3	15_ast_interpreter	main	-1	i32	unknown				0	0	0
+O3	15_ast_interpreter	ast_count	0	ptr struct Node	correct	correct	0.233	0.700	0	1	1
+O3	15_ast_interpreter	ast_count	-1	u32	correct				0	1	1
+O3	15_ast_interpreter	ast_free	0	ptr struct Node	correct	correct	0.233	0.700	0	1	1
+O3	15_ast_interpreter	node_new	0	enum	correct				0	1	1
+O3	15_ast_interpreter	node_new	-1	ptr struct Node	correct	correct	0.233	0.700	0	1	1
+O3	15_ast_interpreter	lit_str	0	ptr i8	correct	wrong			0	1	1
+O3	15_ast_interpreter	lit_str	-1	ptr struct Node	correct	correct	0.233	0.700	0	1	1
+O3	15_ast_interpreter	assign	0	ptr i8	correct	wrong			0	2	2
+O3	15_ast_interpreter	assign	1	ptr struct Node	correct	correct	0.233	0.700	0	2	2
+O3	15_ast_interpreter	assign	-1	ptr struct Node	correct	correct	0.233	0.700	0	2	2
+O3	15_ast_interpreter	call1	0	ptr i8	correct	wrong			0	2	2
+O3	15_ast_interpreter	call1	1	ptr struct Node	correct	correct	0.233	0.700	0	2	2
+O3	15_ast_interpreter	call1	-1	ptr struct Node	correct	correct	0.233	0.700	0	2	2
+O3	15_ast_interpreter	var_ref	0	ptr i8	correct	wrong			0	1	1
+O3	15_ast_interpreter	var_ref	-1	ptr struct Node	correct	correct	0.233	0.700	0	1	1
+O3	15_ast_interpreter	env_slot	0	ptr struct Env	correct	correct	0.011	0.500	0	2	2
+O3	15_ast_interpreter	env_slot	1	ptr i8	correct	wrong			0	2	2
+O3	15_ast_interpreter	env_slot	-1	ptr struct Value	correct	correct	0.250	0.500	0	2	2
+O3	15_ast_interpreter	eval	0	ptr struct Node	correct	correct	0.067	0.667	0	2	3
+O3	15_ast_interpreter	eval	1	ptr struct Env	correct	correct	0.000	0.000	0	2	3
+O3	15_ast_interpreter	eval	-1	struct Value	unknown				0	2	3
+O3	16_hash_table	main	-1	i32	unknown				0	0	0
+O3	16_hash_table	ht_lookup	0	ptr struct HashTable	correct	correct	1.000	1.000	1	2	2
+O3	16_hash_table	ht_lookup	1	ptr i8	correct	correct			0	2	2
+O3	16_hash_table	ht_lookup	-1	ptr struct Entry	correct	correct	0.667	1.000	0	2	2
+O3	16_hash_table	ht_erase	0	ptr struct HashTable	correct	correct	1.000	1.000	1	2	2
+O3	16_hash_table	ht_erase	1	ptr i8	correct	correct			0	2	2
+O3	16_hash_table	ht_erase	-1	i32	unknown				0	2	2
+O3	16_hash_table	ht_stats	0	ptr struct HashTable	correct	correct	1.000	1.000	1	1	1
+O3	17_graph	main	-1	i32	unknown				0	0	0
+O3	17_graph	state_reset	0	ptr struct SearchState	correct	correct	0.016	0.250	0	2	2
+O3	17_graph	state_reset	1	u16	wrong				0	2	2
+O3	17_graph	graph_add_edge	0	u16	wrong				0	5	4
+O3	17_graph	graph_add_edge	1	u16	wrong				0	5	4
+O3	17_graph	graph_add_edge	2	u16	wrong				0	5	4
+O3	17_graph	graph_add_edge	3	u32	correct				0	5	4
+O3	17_graph	graph_add_edge	4	ptr struct Graph	unknown	wrong	0.000		0	5	4
+O3	17_graph	graph_add_bidir	0	u16	wrong				0	5	4
+O3	17_graph	graph_add_bidir	1	u16	wrong				0	5	4
+O3	17_graph	graph_add_bidir	2	u16	wrong				0	5	4
+O3	17_graph	graph_add_bidir	3	u32	correct				0	5	4
+O3	17_graph	graph_add_bidir	4	ptr struct Graph	wrong	wrong	0.000		0	5	4
+O3	17_graph	graph_add_vertex	0	ptr i8	correct	wrong			0	6	3
+O3	17_graph	graph_add_vertex	1	ptr i8	correct	wrong			0	6	3
+O3	17_graph	graph_add_vertex	2	f64	wrong				0	6	3
+O3	17_graph	graph_add_vertex	3	f64	unknown				0	6	3
+O3	17_graph	graph_add_vertex	4	u32	unknown				0	6	3
+O3	17_graph	graph_add_vertex	5	ptr struct Graph	unknown	wrong	0.000		0	6	3
+O3	17_graph	graph_add_vertex	-1	u16	wrong				0	6	3
+O3	17_graph	dfs_matrix	0	u16	wrong				0	4	3
+O3	17_graph	dfs_matrix	1	ptr struct SearchState	correct	correct	0.016	0.250	0	4	3
+O3	17_graph	dfs_matrix	2	i32	correct				0	4	3
+O3	17_graph	dfs_matrix	3	ptr struct Graph	unknown	wrong	0.000		0	4	3
+O3	18_opaque_generic	main	-1	i32	unknown				0	0	0
+O3	18_opaque_generic	ring_new	0	u64	correct				0	2	2
+O3	18_opaque_generic	ring_new	1	u64	correct				0	2	2
+O3	18_opaque_generic	ring_new	-1	ptr struct RingBuffer	correct	correct	0.778	0.778	0	2	2
+O3	18_opaque_generic	ring_push	0	ptr struct RingBuffer	correct	correct	0.778	0.778	0	2	2
+O3	18_opaque_generic	ring_push	1	ptr void	correct	correct			0	2	2
+O3	19_state_machine	main	-1	i32	unknown				0	0	0
+O3	19_state_machine	act_syn	0	ptr struct Connection	correct	correct	0.060	1.000	0	2	1
+O3	19_state_machine	act_syn	1	enum	unknown				0	2	1
+O3	19_state_machine	act_data	0	ptr struct Connection	correct	correct	0.030	0.667	0	2	1
+O3	19_state_machine	act_data	1	enum	unknown				0	2	1
+O3	19_state_machine	act_retry	0	ptr struct Connection	correct	correct	0.015	1.000	0	2	1
+O3	19_state_machine	act_retry	1	enum	unknown				0	2	1
+O3	19_state_machine	act_listen	0	ptr struct Connection	correct	correct	0.015	0.333	0	2	1
+O3	19_state_machine	act_listen	1	enum	unknown				0	2	1
+O3	19_state_machine	act_establish	0	ptr struct Connection	correct	correct	0.030	0.500	0	2	1
+O3	19_state_machine	act_establish	1	enum	unknown				0	2	1
+O3	19_state_machine	act_close	0	ptr struct Connection	correct	correct	0.015	0.500	0	2	2
+O3	19_state_machine	act_close	1	enum	correct				0	2	2
+O3	19_state_machine	act_reset	0	ptr struct Connection	correct	correct	0.030	0.286	0	2	2
+O3	19_state_machine	act_reset	1	enum	correct				0	2	2
+O3	19_state_machine	conn_feed	0	ptr struct Connection	correct	correct	0.164	0.917	0	2	2
+O3	19_state_machine	conn_feed	1	enum	correct				0	2	2
+O3	19_state_machine	conn_dump	0	ptr struct Connection	correct	correct	0.164	0.917	0	1	1
+O3	20_combined_stress	main	-1	i32	unknown				0	0	0
+O3	20_combined_stress	container_place	0	ptr struct Container	correct	correct	0.419	0.371	0	2	2
+O3	20_combined_stress	container_place	1	ptr struct Item	correct	correct	0.200	0.625	0	2	2
+O3	20_combined_stress	script_run	0	ptr struct Item	correct	correct	0.200	0.625	0	1	1
+O3	20_combined_stress	script_run	-1	i32	correct				0	1	1
+O3	20_combined_stress	container_new	0	ptr i8	correct	wrong			0	4	4
+O3	20_combined_stress	container_new	1	u16	correct				0	4	4
+O3	20_combined_stress	container_new	2	u16	wrong				0	4	4
+O3	20_combined_stress	container_new	3	u16	correct				0	4	4
+O3	20_combined_stress	container_new	-1	ptr struct Container	correct	correct	0.419	0.371	0	4	4
+O3	20_combined_stress	item_new	0	ptr struct World	correct	correct	0.400	0.667	0	4	4
+O3	20_combined_stress	item_new	1	ptr i8	correct	wrong			0	4	4
+O3	20_combined_stress	item_new	2	enum	correct				0	4	4
+O3	20_combined_stress	item_new	3	i64	correct				0	4	4
+O3	20_combined_stress	item_new	-1	ptr struct Item	correct	correct	0.200	0.625	0	4	4
+O3	20_combined_stress	index_free	0	ptr struct IndexNode	correct	correct	1.000	1.000	1	1	1
+O3	20_combined_stress	container_free	0	ptr struct Container	correct	correct	0.419	0.371	0	1	0
+O3	20_combined_stress	index_walk	0	ptr struct IndexNode	correct	correct	1.000	1.000	1	1	0
+O3	20_combined_stress	container_value	0	ptr struct Container	correct	correct	0.419	0.371	0	1	1
+O3	20_combined_stress	container_value	-1	u32	correct				0	1	1
+O3	20_combined_stress	container_print	0	ptr struct Container	correct	correct	0.419	0.371	0	2	2
+O3	20_combined_stress	container_print	1	i32	correct				0	2	2
+O3	20_combined_stress	index_insert	0	ptr struct IndexNode	correct	correct	1.000	1.000	1	3	3
+O3	20_combined_stress	index_insert	1	ptr struct Item	correct	correct	0.040	1.000	0	3	3
+O3	20_combined_stress	index_insert	2	u32	correct				0	3	3
+O3	20_combined_stress	index_insert	-1	ptr struct IndexNode	correct	correct	1.000	1.000	1	3	3

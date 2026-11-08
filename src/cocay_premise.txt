@@ -1,0 +1,183 @@
+lifted 3 functions from /Users/albuscorleone/Documents/BKISC/Thesis/experiments/webasmir/hand_example/tiny.O0.stripped
+  sub_401126 @ 0x401126: 1 blocks, 2 statements
+  sub_401137 @ 0x401137: 2 blocks, 4 statements
+  sub_40116b @ 0x40116b: 3 blocks, 4 statements
+----------------------------------------
+  external malloc @ 0x401030
+  external __libc_start_main @ 0x500000
+  external malloc @ 0x500008
+  external UnresolvableJumpTarget @ 0x601050
+  external UnresolvableCallTarget @ 0x601058
+----------------------------------------
+found 5 externals and 0 call tables
+-------------------- sub_401126 --------------------
+[Var(fn='sub_401126', name='a0', bits=64)]
+stmt: Let(var=Var(fn='sub_401126', name='v13', bits=64), expr=StackAddr(offset=0), at=4198694)
+stmt: Return(value=Conv(a=Load(addr=BinOp(op='Add', a=VarRef(var=Var(fn='sub_401126', name='a0', bits=64)), b=Const(value=8, bits=64), bits=64, signed=False), size=4, at=4198706), from_bits=32, to_bits=64, signed=False), at=4198710)
+-------------------- sub_401137 --------------------
+[Var(fn='sub_401137', name='a0', bits=32)]
+stmt: Let(var=Var(fn='sub_401137', name='v26', bits=64), expr=Call(target='malloc', args=(Const(value=16, bits=64),), at=4198732, targets=()), at=4198732)
+stmt: Store(addr=VarRef(var=Var(fn='sub_401137', name='v26', bits=64)), data=Const(value=7, bits=64), size=8, at=4198740)
+stmt: Store(addr=BinOp(op='Add', a=VarRef(var=Var(fn='sub_401137', name='v26', bits=64)), b=Const(value=8, bits=64), bits=64, signed=False), data=VarRef(var=Var(fn='sub_401137', name='a0', bits=32)), size=4, at=4198754)
+stmt: Return(value=VarRef(var=Var(fn='sub_401137', name='v26', bits=64)), at=4198762)
+-------------------- sub_40116b --------------------
+[Var(fn='sub_40116b', name='a0', bits=32), Var(fn='sub_40116b', name='a1', bits=64)]
+stmt: Let(var=Var(fn='sub_40116b', name='v26', bits=64), expr=VarRef(var=Var(fn='sub_40116b', name='a1', bits=64)), at=4198774)
+sub_40116b.v26 , sub_40116b.a1
+stmt: CallStmt(call=Call(target='sub_401137', args=(Conv(a=VarRef(var=Var(fn='sub_40116b', name='a0', bits=32)), from_bits=32, to_bits=64, signed=False),), at=4198783, targets=()), ret=Var(fn='sub_40116b', name='v15', bits=64), at=4198783)
+stmt: CallStmt(call=Call(target='sub_401126', args=(VarRef(var=Var(fn='sub_40116b', name='v15', bits=64)),), at=4198791, targets=()), ret=None, at=4198791)
+stmt: Return(value=None, at=4198797)
+
+=== Lifted IR and premises (before unification) ===
+fn sub_401126(a0:64)  @401126 size 17
+{
+ L_401126:
+  v13:64 = &stack[0];                                        @401126
+  return zext32->64(load[4](a0 +64 8));                      @401136
+}
+premises (sub_401126):
+  hole      @0      Eq        type_of(a0) = ?[a0]   [every term has a hole]
+  T-Fn      @401126 Eq        type_of(a0) = param(sub_401126, 0)   [parameter binding]
+  S-ABI     @401126 Kind      type_of(a0) :: 8B -   [live-in rdi (8B)]
+  S-ABI     @401126 Arity     arity(sub_401126) >= 1 (rdi)
+  hole      @0      Eq        type_of(v13) = ?[v13]   [every term has a hole]
+  hole      @401126 Eq        type_of(&stack0) = ?[&stack0]   [every term has a hole]
+  K-Ptr     @401126 Eq        type_of(&stack0) = ptr<web &stack0> ?[*&stack0]   [used as an address]
+  K-Ptr     @401126 Kind      type_of(&stack0) :: 8B ptr   [used as an address]
+  S-Unify   @401126 Eq        type_of(v13) = type_of(&stack0)   [assignment]
+  K-Ptr     @401132 Eq        type_of(a0) = ptr<web a0> ?[*a0]   [used as an address]
+  K-Ptr     @401132 Kind      type_of(a0) :: 8B ptr   [used as an address]
+  S-Access  @401132 Access    ?[*a0] has 4B at +8 (read)
+  S-Access  @401132 Kind      ?[*a0]@+8 :: 4B -   [read 4B at +8]
+  T-Fn      @401136 Eq        ?[*a0]@+8 = ret(sub_401126)   [returned value]
+
+fn sub_401137(a0:32)  @401137 size 52
+{
+ L_401137:
+ L_40114c:
+  v26:64 = malloc(16);                                       @40114c
+  store[8](v26) = 7;                                         @401154
+  store[4](v26 +64 8) = a0;                                  @401162
+  return v26;                                                @40116a
+}
+premises (sub_401137):
+  hole      @0      Eq        type_of(a0) = ?[a0]   [every term has a hole]
+  T-Fn      @401137 Eq        type_of(a0) = param(sub_401137, 0)   [parameter binding]
+  S-ABI     @401137 Kind      type_of(a0) :: 4B -   [live-in rdi (4B)]
+  S-ABI     @401137 Arity     arity(sub_401137) >= 1 (rdi)
+  hole      @0      Eq        type_of(v26) = ?[v26]   [every term has a hole]
+  hole      @40114c Eq        type_of(ret1@40114c) = ?[ret1@40114c]   [every term has a hole]
+  K-Ptr     @40114c Eq        type_of(ret1@40114c) = ptr<web ret1@40114c> ?[*ret1@40114c]   [used as an address]
+  K-Ptr     @40114c Kind      type_of(ret1@40114c) :: 8B ptr   [used as an address]
+  ext       @40114c AllocSize ?[*ret1@40114c] size >= 16
+  S-Unify   @40114c Eq        type_of(v26) = type_of(ret1@40114c)   [assignment]
+  K-Ptr     @401154 Eq        type_of(v26) = ptr<web v26> ?[*v26]   [used as an address]
+  K-Ptr     @401154 Kind      type_of(v26) :: 8B ptr   [used as an address]
+  S-Access  @401154 Access    ?[*v26] has 8B at +0 (write)
+  S-Access  @401154 Kind      ?[*v26]@+0 :: 8B -   [write 8B at +0]
+  S-Access  @401154 Kind      ?[*v26]@+0 :: 8B int   [non-null constant stored]
+  S-Access  @401162 Access    ?[*v26] has 4B at +8 (write)
+  S-Access  @401162 Kind      ?[*v26]@+8 :: 4B -   [write 4B at +8]
+  S-Unify   @401162 Eq        ?[*v26]@+8 = type_of(a0)   [stored value]
+  T-Fn      @40116a Eq        type_of(v26) = ret(sub_401137)   [returned value]
+
+fn sub_40116b(a0:32, a1:64) -> void  @40116b size 35
+{
+ L_40116b:
+  v26:64 = a1;                                               @401176
+  v15:64 = sub_401137(zext32->64(a0));                       @40117f
+ L_401184:
+  sub_401126(v15);                                           @401187
+ L_40118c:
+  return;                                                    @40118d
+}
+premises (sub_40116b):
+  hole      @0      Eq        type_of(a0) = ?[a0]   [every term has a hole]
+  T-Fn      @40116b Eq        type_of(a0) = param(sub_40116b, 0)   [parameter binding]
+  S-ABI     @40116b Kind      type_of(a0) :: 4B -   [live-in rdi (4B)]
+  hole      @0      Eq        type_of(a1) = ?[a1]   [every term has a hole]
+  T-Fn      @40116b Eq        type_of(a1) = param(sub_40116b, 1)   [parameter binding]
+  S-ABI     @40116b Kind      type_of(a1) :: 8B -   [live-in rsi (8B)]
+  S-ABI     @40116b Arity     arity(sub_40116b) >= 2 (rdi, rsi)
+  hole      @0      Eq        type_of(v26) = ?[v26]   [every term has a hole]
+  S-Unify   @401176 Eq        type_of(v26) = type_of(a1)   [assignment]
+  S-Arg     @40117f Eq        type_of(a0) = param(sub_401137, 0)   [argument 0 (rdi)]
+  hole      @0      Eq        type_of(v15) = ?[v15]   [every term has a hole]
+  S-Unify   @40117f Eq        type_of(v15) = ret(sub_401137)   [call result]
+  S-Arg     @401187 Eq        type_of(v15) = param(sub_401126, 0)   [argument 0 (rdi)]
+
+
+=== Functions ===
+#c1   sub_401126           @401126  1 params  3 open holes
+#c2   sub_401137           @401137  1 params  2 open holes
+#c3   sub_40116b           @40116b  2 params  3 open holes
+
+=== Code webs ===
+#c1:
+  sub_401126
+#c2:
+  sub_401137
+#c3:
+  sub_40116b
+
+=== Data webs ===
+#d2:
+  sub_401126.&stack0
+#d1:
+  sub_401126.a0
+  sub_401137.ret1@40114c
+  sub_401137.v26
+
+=== Value webs ===
+#w3:
+  sub_401126.&stack0
+#w1:
+  sub_401126.a0
+#w2:
+  sub_401126.v13
+#w4:
+  sub_401137.a0
+#w5:
+  sub_401137.v26
+#w7:
+  sub_40116b.a0
+#w8:
+  sub_40116b.a1
+  sub_40116b.v26
+#w9:
+  sub_40116b.v15
+
+=== Lifted views with inferred webs and holes ===
+fn#c1 sub_401126(a0#w1: ptr#d1 ?T1) -> ?T3
+{
+  let v13#w2: ptr#d2 ?T2 = &stack[0];                        @401126
+  return load[4,⊤](a0 + 8);                                  @401136
+}
+holes: ?T1 :: [>=16, 8, agg]  :> { 0: [8,8,int], 8: [4,4,⊤] }
+       ?T2 :: [?,?,⊤]
+       ?T3 :: [4,4,⊤]
+
+fn#c2 sub_401137(a0#w4: ?T3) -> ptr#d1 ?T1
+{
+ L_40114c:
+  let v26#w5: ptr#d1 ?T1 = malloc(16);                       @40114c
+  store[8](v26 + 0) = 7;                                     @401154
+  store[4](v26 + 8) = a0;                                    @401162
+  return v26;                                                @40116a
+}
+holes: ?T1 :: [>=16, 8, agg]  :> { 0: [8,8,int], 8: [4,4,⊤] }
+       ?T3 :: [4,4,⊤]
+
+fn#c3 sub_40116b(a0#w7: ?T3, a1#w8: ?T4) -> void
+{
+  let v26#w8: ?T4 = a1;                                      @401176
+  let v15#w9: ptr#d1 ?T1 = sub_401137(a0);                   @40117f
+ L_401184:
+  sub_401126(v15);                                           @401187
+ L_40118c:
+  return;                                                    @40118d
+}
+holes: ?T1 :: [>=16, 8, agg]  :> { 0: [8,8,int], 8: [4,4,⊤] }
+       ?T3 :: [4,4,⊤]
+       ?T4 :: [8,8,⊤]
+
