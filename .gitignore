@@ -1,0 +1,40 @@
+# Python bytecode and local environments
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+env/
+ENV/
+
+# Python tooling caches and coverage reports
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.pyre/
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+
+# Python packaging metadata
+*.egg-info/
+.eggs/
+
+# Local editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Operating-system metadata
+.DS_Store
+._*
+Thumbs.db
+
+# Custom
+personal/
+
+# Keep built program binaries, including .elf, .dbg, .stripped, .o, and .so.
+# Build directories, analysis databases, and experiment results remain visible.
