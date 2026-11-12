@@ -230,6 +230,10 @@ def saturate(eg: EGraph) -> None:
 
 
 def load_premises(eg: EGraph, enc: Encoder, premises: Premises) -> None:
+    # print(premises.items)
+    print('-' * 64)
+    for p in premises.items:
+        print(p)
     for p in premises.items:
         if isinstance(p, Eq):
             eg.register(union(enc.ty(p.a)).with_(enc.ty(p.b)))

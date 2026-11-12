@@ -284,13 +284,7 @@ class _Fn:
     def stmt(self, s) -> None:
         print("stmt:", s)
         if isinstance(s, Let):
-            # print("let", s.var.id, "=", s.expr)
             t = self.term(s.var)
-            # print("out:", self.out)
-            # print(s.expr)
-            # print(s.at)
-            # import sys
-            # sys.exit(1)
             self.flow_into(t, s.expr, s.at)
         elif isinstance(s, Store):
             self.store(s)
@@ -547,18 +541,13 @@ class _Fn:
         return None
 
     def expr(self, e: Expr, at: int, narrow: int | None = None) -> T | None:
-        """Type of an expression; adds the premises its evaluation implies.
-        `narrow`: the consumer truncates the result to this many bits, so the
-        operation is really that wide (Clinic keeps 64-bit ops around 32-bit code)."""
         if isinstance(e, VarRef):
             return tv(self.term(e.var))
         if isinstance(e, Const):
-            return None  # 0 / small constants are polymorphic
+            return None
         if isinstance(e, Load):
             return self.access(e.addr, e.size, e.at, False)
         if isinstance(e, (BinOp, UnOp)) and e.bits > 64 or isinstance(e, Conv) and max(e.from_bits, e.to_bits) > 64:
-            # vector-register (xmm/ymm) artifacts: Clinic models partial moves as wide masks.
-            # Premises must be certain, and dropping evidence is always sound.
             return tv(self.fresh(at, "vec"))
         if isinstance(e, Conv):
             inner = self.expr(e.a, at) if not (e.from_bits == 64 and e.to_bits == 32 and isinstance(e.a, (BinOp, UnOp))) else None
@@ -576,11 +565,10 @@ class _Fn:
         if isinstance(e, Call):
             return self.call(e)
         if isinstance(e, BinOp) and e.op == "And" and e.bits == 64 and isinstance(e.b, Const) and e.b.value == 0xFFFFFFFF:
-            return self.expr(e.a, at, narrow=32)  # 32-bit zero-extension idiom, not 64-bit integer evidence
+            return self.expr(e.a, at, narrow=32)
         if isinstance(e, BinOp):
             bits = min(e.bits, narrow) if narrow else e.bits
             sub = narrow if e.op not in ("Shl", "Shr", "Sar") else None
-            # a zero-extended 32-bit value inside a 64-bit operation is a real widening
             a = self.arg(e.a, at, 64) if bits == 64 else self.expr(e.a, at, sub)
             b = self.arg(e.b, at, 64) if bits == 64 else self.expr(e.b, at, sub)
             if e.op.startswith("Cmp"):
@@ -594,7 +582,7 @@ class _Fn:
                 t = self.fresh(at, "e")
                 self.out.add(Kind("K-Int", at, self.fn.name, tv(t), size, "int", f"{e.op} result"))
                 return tv(t)
-            t = self.fresh(at, "e")  # 64-bit add/sub: pointer or integer, undecided
+            t = self.fresh(at, "e")
             return tv(t)
         if isinstance(e, VarRef) and narrow:
             return tv(self.term(e.var))
