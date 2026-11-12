@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "status": "design_only_not_consumed_by_existing_runner",
+  "experiment_id": "webasmir-comparison-pilot-v1",
+  "task": "whole_program_c_and_structural_types",
+  "architecture": "x86_64-linux-sysv",
+  "source_families": 6,
+  "optimization_levels": ["O0", "O2"],
+  "repetitions": 3,
+  "models": [],
+  "expected_model_count": 2,
+  "planned_run_count": 216,
+  "seed": 20261112,
+  "prompt": "prompts/task.md",
+  "type_output_schema": "schemas/types.schema.json",
+  "conditions": [
+    {"id": "raw", "guidance": null, "analysis_server": null},
+    {
+      "id": "rea",
+      "profile": "static_native",
+      "repository": "https://github.com/morluto/rea",
+      "inspected_commit": "3a36b3e6d6ac8895358060ae7182cb8931daf5a7",
+      "skill_path": ".agents/skills/reverse-engineer-anything/SKILL.md",
+      "runtime_commit": null,
+      "backend": "ghidra",
+      "backend_version": null,
+      "input_schema_profile": null,
+      "output_schema_profile": null,
+      "advertised_tools_sha256": null
+    },
+    {
+      "id": "webasmir",
+      "guidance": "skills/webasmir-recovery/SKILL.md",
+      "inspected_commit": "ef1f879f21889ffacb2723832a43f855749bb7a7",
+      "runtime_commit": null,
+      "transport": "stdio",
+      "entrypoint": "asmwebir.mcp_server",
+      "new_process_per_trial": true,
+      "serialize_calls": true,
+      "deliver_server_instructions": true,
+      "checker": true,
+      "advertised_tools_sha256": null
+    }
+  ],
+  "common_tools": [
+    "read_evidence", "search_evidence", "read_bytes",
+    "write_artifact", "read_artifact", "build_candidate", "test_candidate_public"
+  ],
+  "limits": {
+    "input_context_tokens": 65536,
+    "per_request_output_reserve_tokens": 8192,
+    "cumulative_full_input_tokens": 524288,
+    "cumulative_output_tokens": 32768,
+    "model_requests": 40,
+    "individual_tool_calls": 120,
+    "wall_seconds": 1200,
+    "public_build_attempts": 3,
+    "public_test_attempts": 3,
+    "reserved_finalization_requests_within_budget": 1
+  },
+  "policies": {
+    "automatic_compaction": false,
+    "delegation": false,
+    "model_fallback": false,
+    "backend_fallback": false,
+    "response_replay": false,
+    "provider_prompt_cache": "fixed_policy_log_actual_hits",
+    "backend_state": "fresh_per_trial",
+    "hidden_feedback": false,
+    "candidate_execution_has_original_binary": false
+  },
+  "private_evaluation": {
+    "curated_edge_tests_per_case_min": 20,
+    "seeded_random_tests_per_case_min": 200,
+    "primary_metric": "compiles_and_passes_all_hidden_tests",
+    "structural_type_metric": "fixed_observable_gold_entities",
+    "aggregate": "macro_by_source_family",
+    "bootstrap_unit": "source_family",
+    "bootstrap_repetitions": 10000,
+    "confidence_level": 0.95,
+    "image_digest": null,
+    "candidate_cpu_seconds_per_test": null,
+    "candidate_memory_bytes": null,
+    "candidate_output_bytes": null
+  },
+  "corpus_manifest_sha256": null,
+  "dependency_lock_sha256": null,
+  "ready_to_run": false
+}

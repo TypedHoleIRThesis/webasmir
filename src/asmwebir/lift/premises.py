@@ -16,6 +16,8 @@ Symbolic types `T`:
 """
 from __future__ import annotations
 
+import sys
+
 from dataclasses import dataclass, field
 
 from ..ir.syntax import (
@@ -157,7 +159,7 @@ def extract_premises(prog: Program) -> Premises:
     out = Premises()
     for fn in sorted(prog.functions.values(), key=lambda f: f.addr):
         mark = len(out.items), len(out.terms), dict(out.pointers)
-        print('-' * 20, fn.name, '-' * 20)
+        print('-' * 20, fn.name, '-' * 20, file=sys.stderr)
         # for stmt in fn.stmts:
         #     print(stmt)
         try:
@@ -184,7 +186,7 @@ class _Fn:
         return x
 
     def join(self, a: str, b: str) -> None:
-        print(a, ',', b)
+        print(a, ',', b, file=sys.stderr)
         ra, rb = self.find(a), self.find(b)
         if ra != rb:
             self.uf[max(ra, rb)] = min(ra, rb)
@@ -273,7 +275,7 @@ class _Fn:
     # -- the rules
     @rule("S-ABI", "T-Fn")
     def params(self, fn: Function) -> None:
-        print(fn.params)
+        print(fn.params, file=sys.stderr)
         for i, p in enumerate(fn.params):
             t = self.term(p)
             self.out.add(Eq("T-Fn", fn.addr, fn.name, tv(t), ("param", code(fn.name), i), "parameter binding"))
@@ -282,7 +284,7 @@ class _Fn:
                            tuple(arg_loc(i) for i in range(len(fn.params)))))
 
     def stmt(self, s) -> None:
-        print("stmt:", s)
+        print("stmt:", s, file=sys.stderr)
         if isinstance(s, Let):
             t = self.term(s.var)
             self.flow_into(t, s.expr, s.at)

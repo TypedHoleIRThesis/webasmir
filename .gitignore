@@ -35,6 +35,8 @@ Thumbs.db
 
 # Custom
 personal/
+benchmark/*.local.json
+results/benchmark/
 
 # Keep built program binaries, including .elf, .dbg, .stripped, .o, and .so.
 # Build directories, analysis databases, and experiment results remain visible.

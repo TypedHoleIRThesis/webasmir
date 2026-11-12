@@ -1,0 +1,15 @@
+{
+  "models": [],
+  "conditions": "raw,webasmir",
+  "repeats": 3,
+  "reasoning": "high",
+  "corpus": "../llm-decompile-test/artifacts_result_only",
+  "pattern": "**/stripped.elf",
+  "output": "results/benchmark",
+  "bench_home": "",
+  "image": "type-recovery-bench:ubuntu22.04",
+  "track": "objdump-complete",
+  "timeout": 1200,
+  "max_tool_calls": 120,
+  "seed": 20261112
+}

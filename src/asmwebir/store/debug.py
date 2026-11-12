@@ -12,6 +12,8 @@ e-graph's equalities.
 """
 from __future__ import annotations
 
+import sys
+
 import os
 from collections import defaultdict
 
@@ -72,23 +74,23 @@ def dump_egraph(eg: EGraph, enc: Encoder, premises: Premises, title: str) -> Non
     for t in _terms(premises):
         classes[str(eg.extract(enc.ty(t)))].append(t)
 
-    print(f"\n===== e-graph {title}: {len(classes)} e-classes =====")
+    print(f"\n===== e-graph {title}: {len(classes)} e-classes =====", file=sys.stderr)
     for i, (rep, members) in enumerate(classes.items(), 1):
-        print(f"E{i}  (extracts to {rep})")
+        print(f"E{i}  (extracts to {rep})", file=sys.stderr)
         for t in members:
-            print(f"    {_show(t)}")
+            print(f"    {_show(t)}", file=sys.stderr)
 
     webs: dict[str, list[str]] = defaultdict(list)
     for base in premises.pointers:
         webs[str(eg.extract(Web(base)))].append(base)
-    print(f"--- data webs ({len(webs)}) ---")
+    print(f"--- data webs ({len(webs)}) ---", file=sys.stderr)
     for rep, members in webs.items():
-        print(f"  {rep}: {', '.join(members)}")
+        print(f"  {rep}: {', '.join(members)}", file=sys.stderr)
 
     codes: dict[str, list[str]] = defaultdict(list)
     for fn in dict.fromkeys(p.fn for p in premises.items):
         codes[str(eg.extract(Code(fn)))].append(fn)
-    print(f"--- code webs ({len(codes)}) ---")
+    print(f"--- code webs ({len(codes)}) ---", file=sys.stderr)
     for rep, members in codes.items():
-        print(f"  {rep}: {', '.join(members)}")
-    print("=" * 40)
+        print(f"  {rep}: {', '.join(members)}", file=sys.stderr)
+    print("=" * 40, file=sys.stderr)

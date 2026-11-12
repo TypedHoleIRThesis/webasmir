@@ -11,6 +11,8 @@ QuickXplain over the active claims (D - Labels via re-saturation and QuickXplain
 """
 from __future__ import annotations
 
+import sys
+
 from dataclasses import dataclass, field
 
 from egglog import union
@@ -84,16 +86,16 @@ class KnowledgeStore:
     @classmethod
     def from_binary(cls, path: str, log_path: str | None = None) -> "KnowledgeStore":
         prog = lift_binary(path)
-        print(f"lifted {len(prog.functions)} functions from {path}")
+        print(f"lifted {len(prog.functions)} functions from {path}", file=sys.stderr)
         for f in prog.functions.values():
-            print(f"  {f.name} @ {hex(f.addr)}: {len(f.blocks)} blocks, {sum(len(b.stmts) for b in f.blocks)} statements")
-        print('-' * 40)
+            print(f"  {f.name} @ {hex(f.addr)}: {len(f.blocks)} blocks, {sum(len(b.stmts) for b in f.blocks)} statements", file=sys.stderr)
+        print('-' * 40, file=sys.stderr)
         for external in sorted(prog.externals.items()):
-            print(f"  external {external[1]} @ {hex(external[0])}")
-        print('-' * 40)
+            print(f"  external {external[1]} @ {hex(external[0])}", file=sys.stderr)
+        print('-' * 40, file=sys.stderr)
         for table, names in sorted(prog.call_tables.items()):
-            print(f"  call table @ {hex(table)}: {', '.join(names)}")
-        print(f"found {len(prog.externals)} externals and {len(prog.call_tables)} call tables")
+            print(f"  call table @ {hex(table)}: {', '.join(names)}", file=sys.stderr)
+        print(f"found {len(prog.externals)} externals and {len(prog.call_tables)} call tables", file=sys.stderr)
         return cls(prog, extract_premises(prog), log_path)
 
     # -- beliefs

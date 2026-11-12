@@ -1,0 +1,111 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Address-anchored source type predictions, version 1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "functions", "aggregates"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "functions": {"type": "array", "items": {"$ref": "#/$defs/function"}},
+    "aggregates": {"type": "array", "items": {"$ref": "#/$defs/aggregate"}}
+  },
+  "$defs": {
+    "type": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["kind"],
+          "properties": {"kind": {"enum": ["unknown", "void"]}}
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["kind", "bits", "signed"],
+          "properties": {
+            "kind": {"const": "integer"},
+            "bits": {"type": "integer", "minimum": 1},
+            "signed": {"type": ["boolean", "null"]}
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["kind", "bits"],
+          "properties": {
+            "kind": {"const": "float"},
+            "bits": {"type": "integer", "minimum": 1}
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["kind", "to"],
+          "properties": {
+            "kind": {"const": "pointer"},
+            "to": {"$ref": "#/$defs/type"}
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["kind", "of", "count"],
+          "properties": {
+            "kind": {"const": "array"},
+            "of": {"$ref": "#/$defs/type"},
+            "count": {"type": ["integer", "null"], "minimum": 0}
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["kind", "id"],
+          "properties": {
+            "kind": {"const": "named"},
+            "id": {"type": "string", "minLength": 1}
+          }
+        }
+      ]
+    },
+    "parameter": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["index", "type"],
+      "properties": {
+        "index": {"type": "integer", "minimum": 0},
+        "type": {"$ref": "#/$defs/type"}
+      }
+    },
+    "function": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["address", "arity", "parameters", "return"],
+      "properties": {
+        "address": {"type": "string", "pattern": "^0x[0-9a-f]+$"},
+        "arity": {"type": ["integer", "null"], "minimum": 0},
+        "parameters": {"type": "array", "items": {"$ref": "#/$defs/parameter"}},
+        "return": {"$ref": "#/$defs/type"}
+      }
+    },
+    "field": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["offset_bytes", "type"],
+      "properties": {
+        "offset_bytes": {"type": "integer", "minimum": 0},
+        "type": {"$ref": "#/$defs/type"}
+      }
+    },
+    "aggregate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "kind", "size_bytes", "fields"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "kind": {"enum": ["struct", "union"]},
+        "size_bytes": {"type": ["integer", "null"], "minimum": 0},
+        "fields": {"type": "array", "items": {"$ref": "#/$defs/field"}}
+      }
+    }
+  }
+}

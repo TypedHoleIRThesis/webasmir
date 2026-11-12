@@ -6,6 +6,8 @@ canonical keys: two symbolic types are equal iff their keys are equal
 """
 from __future__ import annotations
 
+import sys
+
 from collections import defaultdict
 from dataclasses import dataclass, field
 
@@ -231,9 +233,9 @@ def saturate(eg: EGraph) -> None:
 
 def load_premises(eg: EGraph, enc: Encoder, premises: Premises) -> None:
     # print(premises.items)
-    print('-' * 64)
+    print('-' * 64, file=sys.stderr)
     for p in premises.items:
-        print(p)
+        print(p, file=sys.stderr)
     for p in premises.items:
         if isinstance(p, Eq):
             eg.register(union(enc.ty(p.a)).with_(enc.ty(p.b)))

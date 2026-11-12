@@ -1,0 +1,7 @@
+{
+  "command": ["/absolute/path/to/node", "/absolute/path/to/pinned/rea/entry-script.js"],
+  "skill": "/absolute/path/to/pinned/rea/.agents/skills/reverse-engineer-anything/SKILL.md",
+  "provider_id": "ghidra",
+  "tools": ["open_binary", "list_procedures", "analyze_function", "close_binary"],
+  "env": {}
+}
