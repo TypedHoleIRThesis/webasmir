@@ -105,8 +105,11 @@ def evidence(public: Path, args):
 
 
 def python_server(module, config):
+    # These are the trial's bounded evidence/artifact tools and filtered analysis
+    # relay. `approval_policy=never` forbids prompts; it does not grant MCP access.
     return {'command': sys.executable, 'args': ['-m', module, str(config)],
             'env': {'PYTHONPATH': str(ROOT / 'src')}, 'cwd': str(config.parent),
+            'default_tools_approval_mode': 'approve',
             'startup_timeout_sec': 120, 'tool_timeout_sec': 360, 'required': True}
 
 
@@ -312,6 +315,13 @@ def run_trial(binary, model, condition, repetition, args):
                     metrics.update(tool_metrics(run))
                     metrics['end_to_end_work_seconds'] = manifest['preparation_seconds'] + seconds
                     status = 'TIMEOUT' if timeout else 'MODEL_FAILED' if code or metrics['failure_events'] else 'SUBMITTED'
+                    if metrics['tool_approval_errors']:
+                        status = 'TOOL_APPROVAL_BLOCKED'
+                        message = ('Codex rejected MCP calls because tool approval was required. '
+                                   'Check the generated command.json MCP approval settings; '
+                                   'this is a launcher/configuration failure, not a recovery result.')
+                        (run / 'error.txt').write_text(message + '\n')
+                        print(message, file=sys.stderr)
                     if status == 'SUBMITTED' and (metrics['prohibited_tool_events'] or metrics['invalid_trace_lines'] or metrics['analysis_protocol_errors']):
                         status = 'INVALID_TRACE'
                     missing = [n for n in ('recovered.c', 'types.json', 'notes.md') if not (run / 'artifacts' / n).is_file()]

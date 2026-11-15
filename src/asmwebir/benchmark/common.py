@@ -56,6 +56,8 @@ def trace_metrics(path: Path, allowed_servers=('benchmark', 'analysis')) -> dict
     bad_lines = 0
     failures = 0
     prohibited = []
+    tool_errors = []
+    approval_errors = []
     tools = {}
     for line in path.read_text().splitlines() if path.exists() else []:
         try:
@@ -80,6 +82,13 @@ def trace_metrics(path: Path, allowed_servers=('benchmark', 'analysis')) -> dict
         if kind == 'mcp_tool_call':
             key = f"{item.get('server', '?')}.{item.get('tool', '?')}"
             tools[key] = tools.get(key, 0) + 1
+            if item.get('error'):
+                error = item['error']
+                message = error.get('message', str(error)) if isinstance(error, dict) else str(error)
+                detail = {'tool': key, 'message': message}
+                tool_errors.append(detail)
+                if 'requires approval' in message.lower() and 'approval policy' in message.lower():
+                    approval_errors.append(detail)
             if item.get('server') not in allowed_servers:
                 prohibited.append(item.get('id', key))
         elif kind in ('command_execution', 'file_change', 'web_search',
@@ -100,6 +109,8 @@ def trace_metrics(path: Path, allowed_servers=('benchmark', 'analysis')) -> dict
         'model_request_count': None,
         'accuracy': None,
         'tool_calls': tools,
+        'tool_errors': tool_errors,
+        'tool_approval_errors': approval_errors,
         'invalid_trace_lines': bad_lines,
         'failure_events': failures,
         'prohibited_tool_events': prohibited,

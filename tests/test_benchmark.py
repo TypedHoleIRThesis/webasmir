@@ -11,7 +11,7 @@ import pytest
 
 from asmwebir.benchmark.common import consume_budget, tool_metrics, trace_metrics
 from asmwebir.benchmark.relay import guard_call
-from asmwebir.benchmark.runner import discover, main, make_servers, parse_args, smoke, toml
+from asmwebir.benchmark.runner import discover, main, make_servers, parse_args, policy_args, smoke, toml
 from .conftest import FIX
 
 
@@ -60,6 +60,39 @@ def test_shared_budget(tmp_path):
     consume_budget(config)
     with pytest.raises(ValueError, match='budget exhausted'):
         consume_budget(config)
+
+
+def test_mcp_approval_failures_are_distinct_from_tool_errors(tmp_path):
+    trace = tmp_path / 'trace.jsonl'
+    messages = ['MCP tool call requires approval, but approval policy is never',
+                'Unknown public evidence file']
+    trace.write_text('\n'.join(json.dumps({
+        'type': 'item.completed', 'item': {
+            'type': 'mcp_tool_call', 'server': 'benchmark', 'tool': 'read_evidence',
+            'status': 'failed', 'error': {'message': message}}}) for message in messages))
+    metrics = trace_metrics(trace)
+    assert len(metrics['tool_errors']) == 2
+    assert metrics['tool_approval_errors'] == [{'tool': 'benchmark.read_evidence', 'message': messages[0]}]
+
+
+@pytest.mark.parametrize('condition', ['raw', 'webasmir', 'rea'])
+def test_trial_tools_have_explicit_approval(tmp_path, condition):
+    import tomllib
+    args = parse_args(['--prepare-only', '--no-build'])
+    (tmp_path / 'public').mkdir()
+    if condition == 'rea':
+        skill = tmp_path / 'SKILL.md'
+        skill.write_text('Test REA guidance')
+        config = tmp_path / 'rea.json'
+        config.write_text(json.dumps({'command': [sys.executable], 'skill': str(skill), 'provider_id': 'ghidra'}))
+        args.rea_config = str(config)
+    servers = make_servers(tmp_path, tmp_path, condition, args)
+    policy = policy_args(servers, tmp_path, 'medium')
+    encoded = next(s for s in policy if s.startswith('mcp_servers='))
+    decoded = tomllib.loads(encoded)['mcp_servers']
+    assert set(decoded) == ({'benchmark'} if condition == 'raw' else {'benchmark', 'analysis'})
+    assert all(s['default_tools_approval_mode'] == 'approve' for s in decoded.values())
+    assert 'approval_policy="never"' in policy
 
 
 def test_truncated_tool_log_preserves_completed_calls(tmp_path):
@@ -132,6 +165,12 @@ if mode == 'fail':
 if mode == 'sleep':
     import time
     time.sleep(20)
+if mode == 'approval':
+    print(json.dumps({'type':'item.completed', 'item': {
+        'type':'mcp_tool_call', 'server':'benchmark', 'tool':'read_evidence',
+        'status':'failed', 'error': {'message':'MCP tool call requires approval, but approval policy is never'}}}))
+    print(json.dumps({'type':'turn.completed','usage':{'input_tokens':12,'cached_input_tokens':4,'output_tokens':8}}))
+    raise SystemExit(0)
 async def main():
     from mcp import ClientSession, StdioServerParameters
     from mcp.client.stdio import stdio_client
@@ -172,7 +211,8 @@ def test_launcher_end_to_end_and_distinct_run_ids(tmp_path, fake_cli):
         assert not list(run.rglob('auth.json'))
 
 
-@pytest.mark.parametrize('mode,status', [('fail', 'MODEL_FAILED'), ('sleep', 'TIMEOUT')])
+@pytest.mark.parametrize('mode,status', [('fail', 'MODEL_FAILED'), ('sleep', 'TIMEOUT'),
+                                       ('approval', 'TOOL_APPROVAL_BLOCKED')])
 def test_failed_trials_retain_terminal_records(tmp_path, fake_cli, mode, status):
     objdump = __import__('shutil').which('objdump')
     if not objdump:
@@ -187,4 +227,9 @@ def test_failed_trials_retain_terminal_records(tmp_path, fake_cli, mode, status)
     run = next((output / 'runs').iterdir())
     assert (run / 'status.txt').read_text().strip() == status
     assert json.loads((run / 'manifest.json').read_text())['status'] == status
-    assert json.loads((run / 'metrics.json').read_text())['input_tokens'] is None
+    metrics = json.loads((run / 'metrics.json').read_text())
+    assert metrics['input_tokens'] == (12 if mode == 'approval' else None)
+    if mode == 'approval':
+        assert len(metrics['tool_approval_errors']) == 1
+        assert 'launcher/configuration failure' in (run / 'error.txt').read_text()
+        assert metrics['missing_artifacts'] == ['recovered.c', 'types.json', 'notes.md']

@@ -1,9 +1,26 @@
 # Raw, REA, and WebAsmIR recovery benchmark
 
+| File | Purpose |
+|---|---|
+| [README.md](README.md) | Research protocol below: comparison conditions, experiment design, scoring, and remaining work. |
+| [LAUNCH.md](LAUNCH.md) | Prepare and launch model trials, configure REA, and check the setup. |
+| [EVALUATE.md](EVALUATE.md) | Compile and test recovered C, calculate behavioral accuracy, and read reports. |
+| [TYPE_METRICS.md](TYPE_METRICS.md) | Type matching rules, metric denominators, DWARF reference requirements, and limitations. |
+| [skills/webasmir-recovery/SKILL.md](skills/webasmir-recovery/SKILL.md) | Guidance given to models using the WebAsmIR MCP tools. |
+| [prompts/launch.md](prompts/launch.md) | Task prompt used by the current model launcher. |
+| [prompts/task.md](prompts/task.md) | Proposed task prompt for the broader research protocol. |
+| [reports/tiny-gpt-6.1-sol-2026-11-15.md](reports/tiny-gpt-6.1-sol-2026-11-15.md) | Tiny-example results, source/type comparisons, signedness explanation, and token/time measurements. |
+| [run_models.sh](run_models.sh) | Script that launches model trials. |
+| [evaluate_models.sh](evaluate_models.sh) | Script that evaluates submitted C and type predictions. |
+
 Design date: 2026-11-12. Status: protocol and guidance draft. A Codex CLI launcher
 now implements a bounded static-analysis profile; see [launch instructions](LAUNCH.md).
-The full multi-provider supervisor and hidden-test evaluator described here
+An [offline behavioral evaluator](EVALUATE.md) scores supplied argv/stdin vectors
+or the sibling suite's recorded stdout. The full multi-provider supervisor,
+held-out corpus/test generators, and observability-aware type gold mapping described here
 remain future work.
+A [common type scorer](TYPE_METRICS.md) now compares submitted type graphs against
+matching DWARF as explicitly labeled source-reference diagnostics.
 
 Compare **the same model on the same stripped binary** in three conditions:
 raw evidence, REA with its skill and native backend, and WebAsmIR MCP with its

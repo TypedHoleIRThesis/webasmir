@@ -1,0 +1,6 @@
+[
+  {"name": "argc-1", "argv": []},
+  {"name": "argc-2", "argv": ["a"]},
+  {"name": "argc-3", "argv": ["a", "b"]},
+  {"name": "argc-6", "argv": ["a", "b", "c", "d", "e"]}
+]

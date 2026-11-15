@@ -7,8 +7,11 @@ sibling repo's CLI approach; it is not an Anthropic/Gemini API adapter.
 
 This is the **codex-cli-static-v1** implementation profile. It supplies bounded
 raw evidence, artifact submission, optional compiler feedback, and the selected
-analysis MCP. Runtime/public/hidden tests and the method-neutral type evaluator
-remain future work. This profile does not implement every proposed feature in
+analysis MCP. Offline behavioral accuracy is available through
+[`evaluate_models.sh`](EVALUATE.md); runtime test feedback during model trials
+remains future work. A [shared type scorer](TYPE_METRICS.md) measures submitted
+type agreement against matching DWARF; the observability-aware gold matcher
+remains future work. This profile does not implement every proposed feature in
 [the full research protocol](README.md).
 
 ## 1. Select original input binaries
@@ -89,12 +92,18 @@ common evidence, opens the assigned binary for each analysis condition, and
 checks Codex configuration/authentication. It sends no model request. With a
 corpus it checks the first binary per selected condition. Preparation requires
 neither Codex credentials nor a running analysis backend.
+This checks MCP directly; it does not exercise Codex's model-driven tool dispatch.
 
 The dedicated authentication home persists so Codex can refresh credentials.
 Each trial has fresh runtime SQLite storage and work directories; runs use
 `--ephemeral`, `--ignore-user-config`, `--ignore-rules`, disabled host skill
 lookup, and explicit tool configuration. Credentials are not copied to results.
 Do not reuse your normal working Codex home for experiments.
+
+The launcher explicitly sets `default_tools_approval_mode = "approve"` on its
+`benchmark` and `analysis` MCP servers. The global `approval_policy = "never"`
+disables interactive prompts; it does not automatically approve MCP calls.
+Approval applies only to the supplied bounded tools and filtered analysis relay.
 
 The generated flags were checked with installed Codex CLI 0.167.0. A different
 CLI can reject unsupported settings during preflight; do not remove isolation
@@ -206,7 +215,15 @@ cancelled trials retain terminal status. `SUBMITTED` means artifacts exist and
 the CLI succeeded; it does not mean the C compiles, the type JSON is valid, or
 behavior matches the original. Evaluate these separately and keep failures in
 score denominators. The new manifests are not directly interchangeable with the
-sibling evaluator's TSV format.
+sibling evaluator's TSV format. Run [the offline accuracy evaluator](EVALUATE.md)
+to compile and score these submissions against the original ELF or recorded stdout.
+
+`TOOL_APPROVAL_BLOCKED` means Codex denied an MCP call at its approval layer.
+Inspect `error.txt` and `metrics.json.tool_approval_errors`. Older launcher
+versions reported this as `INCOMPLETE` because no artifacts could be written.
+These are infrastructure failures, not evidence of model recovery quality;
+retain their logs and token usage, fix the configuration, and rerun into fresh
+run directories. Do not include blocked attempts in quality comparisons.
 
 CLI `turn.completed.usage` supplies aggregate input/output/cache/reasoning
 counts where available. Cached input and reasoning are subsets of their totals,
