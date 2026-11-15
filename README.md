@@ -10,7 +10,7 @@ uv pip install --python .venv/bin/python -e '.[dev]'
 .venv/bin/pytest
 ```
 
-| Benchmark file | Purpose |
+<!-- | Benchmark file | Purpose |
 |---|---|
 | [benchmark/README.md](benchmark/README.md) | Research protocol: comparison conditions, experiment design, scoring, and remaining work. |
 | [benchmark/LAUNCH.md](benchmark/LAUNCH.md) | How to prepare and launch model trials, configure REA, and check the setup. |
@@ -21,4 +21,4 @@ uv pip install --python .venv/bin/python -e '.[dev]'
 | [benchmark/prompts/task.md](benchmark/prompts/task.md) | Proposed task prompt for the broader research protocol. |
 | [benchmark/reports/tiny-gpt-6.1-sol-2026-11-15.md](benchmark/reports/tiny-gpt-6.1-sol-2026-11-15.md) | Tiny-example results, source/type comparisons, signedness explanation, and token/time measurements. |
 | [benchmark/run_models.sh](benchmark/run_models.sh) | Script that launches model trials. |
-| [benchmark/evaluate_models.sh](benchmark/evaluate_models.sh) | Script that evaluates submitted C and type predictions. |
+| [benchmark/evaluate_models.sh](benchmark/evaluate_models.sh) | Script that evaluates submitted C and type predictions. | -->
