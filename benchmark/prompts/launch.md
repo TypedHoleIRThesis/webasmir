@@ -14,8 +14,16 @@ Submit exactly these artifacts using benchmark.write_artifact:
   library declarations. No inline assembly, embedded executable, subprocesses,
   network access, or external answer files.
 - types.json: predictions following the supplied schema. Anchor functions to
-  their binary addresses. Use unknown/null for unsupported inferences.
+  their binary addresses. For every integer you report, copy the signedness
+  of its final declaration in recovered.c, resolving typedefs for the target.
+  For example, int and int32_t give "signed": true, and uint64_t gives
+  "signed": false. Check parameters, returns, fields, array elements, and
+  pointees before submission. Use null for signedness only if the recovered
+  declaration leaves it unresolved on the target. Use unknown/null for other
+  unsupported inferences as permitted by the schema.
 - notes.md: unresolved behavior and evidence for important assumptions.
+  When a signedness choice is conventional, identify the declaration and
+  explain what the instructions establish (for example, only the load width).
 
 Use build_candidate when available for compiler feedback. This launcher does
 not supply runtime tests or hidden-test feedback. Do not claim that the code

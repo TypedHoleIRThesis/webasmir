@@ -28,6 +28,15 @@ offline evaluator storage, outside the model's tools and prompt.
 
 ## What is matched
 
+The shared trial prompt asks each condition to copy integer signedness from
+the corresponding declaration in the final `recovered.c`. For example, an
+`int32_t` getter return has `"signed": true` even if its only instruction
+evidence is a four-byte load. The model records that uncertainty in `notes.md`.
+The scorer reads the submitted JSON and does not verify consistency with C.
+The November 15 tiny report used an earlier prompt permitting unknown sign
+when evidence was inconclusive. Use each run's saved `prompt.txt` to identify
+the convention when comparing experiments.
+
 Functions match by original binary entry address; parameters by that address
 and zero-based index; returns by function address. Aggregate IDs and names
 are local identifiers, not comparison targets. A submitted `Record` can match

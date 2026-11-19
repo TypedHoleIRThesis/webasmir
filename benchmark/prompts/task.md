@@ -17,10 +17,14 @@ Submit these files through the artifact tool:
    assembly, launch subprocesses, or retrieve answers from the filesystem or
    network. Only declared inputs and libraries are allowed.
 2. `types.json`: structural type predictions anchored to binary function
-   addresses, following the supplied schema. Use unknown/null where permitted
-   rather than inventing unsupported facts. Original names are not required.
+   addresses, following the supplied schema. For each reported integer,
+   copy signedness from the final C declaration after resolving typedefs for
+   the target. Check parameters, returns, fields, array elements, and pointees.
+   Use null for signedness only if the declaration leaves it unresolved on
+   the target. Use unknown/null for other unsupported inferences where permitted.
 3. `notes.md`: concise unresolved semantics or representation gaps, with the
-   evidence supporting important assumptions.
+   evidence supporting important assumptions. Identify any signedness chosen
+   by convention and the binary evidence available for that declaration.
 
 Use the permitted compiler and public-test feedback within the stated limits.
 Submit your best current artifacts before exhausting the budget. Hidden-test
